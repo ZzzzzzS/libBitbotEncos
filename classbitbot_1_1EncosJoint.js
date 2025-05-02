@@ -1,0 +1,27 @@
+var classbitbot_1_1EncosJoint =
+[
+    [ "EncosJoint", "classbitbot_1_1EncosJoint.html#a03d0f2e26742ba4303bf45c1aaa0dd3f", null ],
+    [ "~EncosJoint", "classbitbot_1_1EncosJoint.html#a085fe012f13c75b13ff6c63d8f5c1ef8", null ],
+    [ "GetActualCurrent", "classbitbot_1_1EncosJoint.html#af27d77872e3ed64661c1a4a65b4c0ed2", null ],
+    [ "GetActualPosition", "classbitbot_1_1EncosJoint.html#ae4c69387fe9f14b6ce925012ead6741c", null ],
+    [ "GetActualVelocity", "classbitbot_1_1EncosJoint.html#a6bea6e15d230713cbfce269516f70caf", null ],
+    [ "GetMode", "classbitbot_1_1EncosJoint.html#aaa212f394630431042151e0a05dd61ea", null ],
+    [ "GetMotionKd", "classbitbot_1_1EncosJoint.html#a22b714877ecc3e5440f9350b3ae6bcfb", null ],
+    [ "GetMotionKp", "classbitbot_1_1EncosJoint.html#ac3995e4e9f803640c0bce2d348190865", null ],
+    [ "GetMotorTemperature", "classbitbot_1_1EncosJoint.html#a242265f81f6534f35c76cb57a3f1ca79", null ],
+    [ "GetTargetCurrent", "classbitbot_1_1EncosJoint.html#aaf6102efcecbbe2bd877479b93835e51", null ],
+    [ "GetTargetPosition", "classbitbot_1_1EncosJoint.html#aad33414753e2417f75b2349dc9e4bc21", null ],
+    [ "GetTargetTorque", "classbitbot_1_1EncosJoint.html#acf6a4b139d3f77eccea6878cbcbdc313", null ],
+    [ "GetTargetVelocity", "classbitbot_1_1EncosJoint.html#adcefc75f9a89da06e9ab080ff0bf2132", null ],
+    [ "isEnable", "classbitbot_1_1EncosJoint.html#a61bfd78c10299d9c90e659cd9f7d91b3", null ],
+    [ "isPowerOn", "classbitbot_1_1EncosJoint.html#adbb110295778be132004783f1f1ff963", null ],
+    [ "ResetMotorPosition", "classbitbot_1_1EncosJoint.html#a4533df7f1277743bcb4e267b08883a07", null ],
+    [ "SetMode", "classbitbot_1_1EncosJoint.html#a867c70fd7513175530a506af9ddce9a6", null ],
+    [ "SetMotionKd", "classbitbot_1_1EncosJoint.html#ac6f7c72994ab2e02e3ef887b08160a48", null ],
+    [ "SetMotionKp", "classbitbot_1_1EncosJoint.html#a62dcfc46f03f9c188a0cf58fbaf202db", null ],
+    [ "SetTargetCurrent", "classbitbot_1_1EncosJoint.html#a35c6caa33bb1eedf22a9c7bfea68f7d8", null ],
+    [ "SetTargetMotion", "classbitbot_1_1EncosJoint.html#ae21897aef658a640dcc9d4b7e8066fdc", null ],
+    [ "SetTargetPosition", "classbitbot_1_1EncosJoint.html#af2c592513f3c71dc8a11ec30f26abcd2", null ],
+    [ "SetTargetTorque", "classbitbot_1_1EncosJoint.html#ac51e5d8430ef625b17792f69728eded2", null ],
+    [ "SetTargetVelocity", "classbitbot_1_1EncosJoint.html#ad61d01ab4650b11619f0e2652f1263f5", null ]
+];

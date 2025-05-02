@@ -1,0 +1,9 @@
+<map id="bitbot::YesenseIMU" name="bitbot::YesenseIMU">
+<area shape="rect" id="Node000001" title="Bitbot Encos Yesense IMU类，继承自Encos_VirtualBusDevice, 用户可以使用该类来管理Yesense IMU设备。" alt="" coords="22,240,169,265"/>
+<area shape="rect" id="Node000002" href="$classbitbot_1_1Encos__VirtualBusDevice.html" title="Encos虚拟总线设备类，继承自EncosDevice, 用户可以使用该类来管理Encos虚拟总线设备。 该类型仅适用于开发者使用，用户无需关心其实现细节。该类型设备是指未挂载在EtherCAT总线上的..." alt="" coords="5,152,185,192"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="98,206,98,240,93,240,93,206"/>
+<area shape="rect" id="Node000003" href="$classbitbot_1_1EncosDevice.html" title="Encos设备类，继承自Device, 用户可以使用该类来管理Encos设备。" alt="" coords="20,79,171,104"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="98,118,98,152,93,152,93,118"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="62,5,129,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="98,44,98,79,93,79,93,44"/>
+</map>

@@ -1,0 +1,13 @@
+<map id="类继承关系图" name="类继承关系图">
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,35,72,60"/>
+<area shape="rect" id="Node000001" href="$classbitbot_1_1EncosDevice.html" title="Encos设备类，继承自Device, 用户可以使用该类来管理Encos设备。" alt="" coords="120,35,271,60"/>
+<area shape="poly" id="edge2_Node000000_Node000001" title=" " alt="" coords="86,45,120,45,120,50,86,50"/>
+<area shape="rect" id="Node000002" href="$classbitbot_1_1Encos__CANBusDevice.html" title="Encos总线设备类，继承自EncosDevice, 用户可以使用该类来管理Encos总线设备。 该类型仅适用于开发者使用，用户无需关心其实现细节。该类型设备是指实际挂载在EtherCAT总线上的设备。" alt="" coords="319,5,529,31"/>
+<area shape="poly" id="edge3_Node000001_Node000002" title=" " alt="" coords="284,33,325,28,325,33,284,39"/>
+<area shape="rect" id="Node000004" href="$classbitbot_1_1Encos__VirtualBusDevice.html" title="Encos虚拟总线设备类，继承自EncosDevice, 用户可以使用该类来管理Encos虚拟总线设备。 该类型仅适用于开发者使用，用户无需关心其实现细节。该类型设备是指未挂载在EtherCAT总线上的..." alt="" coords="334,55,514,95"/>
+<area shape="poly" id="edge5_Node000001_Node000004" title=" " alt="" coords="284,56,334,62,334,67,284,61"/>
+<area shape="rect" id="Node000003" href="$classbitbot_1_1EncosJoint.html" title="Encos电机类，继承自Encos_CANBusDevice, 用户可以使用该类来管理电机设备。" alt="" coords="583,5,718,31"/>
+<area shape="poly" id="edge4_Node000002_Node000003" title=" " alt="" coords="543,15,583,15,583,21,543,21"/>
+<area shape="rect" id="Node000005" href="$classbitbot_1_1YesenseIMU.html" title="Bitbot Encos Yesense IMU类，继承自Encos_VirtualBusDevice, 用户可以使用该类来管理Yesense IMU设备。" alt="" coords="577,63,724,88"/>
+<area shape="poly" id="edge6_Node000004_Node000005" title=" " alt="" coords="528,73,577,73,577,78,528,78"/>
+</map>

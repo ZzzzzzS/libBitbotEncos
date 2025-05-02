@@ -1,0 +1,426 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>BitbotEncos: bitbot::Encos_CANBusDevice类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">BitbotEncos
+   </div>
+   <div id="projectbrief">Bitbot Encos is a bitbot instance for encos motor.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classbitbot_1_1Encos__CANBusDevice.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pro-methods">Protected 成员函数</a> &#124;
+<a href="#friends">友元</a> &#124;
+<a href="classbitbot_1_1Encos__CANBusDevice-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">bitbot::Encos_CANBusDevice类 参考<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Encos总线设备类，继承自EncosDevice, 用户可以使用该类来管理Encos总线设备。 该类型仅适用于开发者使用，用户无需关心其实现细节。该类型设备是指实际挂载在EtherCAT总线上的设备。  
+ <a href="classbitbot_1_1Encos__CANBusDevice.html#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="Encos__device_8hpp_source.html">Encos_device.hpp</a>&gt;</code></p>
+<div class="dynheader">
+类 bitbot::Encos_CANBusDevice 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classbitbot_1_1Encos__CANBusDevice__inherit__graph.png" border="0" usemap="#abitbot_1_1Encos__CANBusDevice_inherit__map" alt="Inheritance graph"/></div>
+<map name="abitbot_1_1Encos__CANBusDevice_inherit__map" id="abitbot_1_1Encos__CANBusDevice_inherit__map">
+<area shape="rect" title="Encos总线设备类，继承自EncosDevice, 用户可以使用该类来管理Encos总线设备。 该类型仅适用于开发者使用，用户无需关心其实现细节。该类型设备是指实际挂载在EtherCAT总线上的设备。" alt="" coords="5,152,216,177"/>
+<area shape="rect" href="classbitbot_1_1EncosJoint.html" title="Encos电机类，继承自Encos_CANBusDevice, 用户可以使用该类来管理电机设备。" alt="" coords="43,225,178,251"/>
+<area shape="poly" title=" " alt="" coords="113,191,113,225,108,225,108,191"/>
+<area shape="rect" href="classbitbot_1_1EncosDevice.html" title="Encos设备类，继承自Device, 用户可以使用该类来管理Encos设备。" alt="" coords="35,79,186,104"/>
+<area shape="poly" title=" " alt="" coords="113,118,113,152,108,152,108,118"/>
+<area shape="rect" title=" " alt="" coords="77,5,144,31"/>
+<area shape="poly" title=" " alt="" coords="113,44,113,79,108,79,108,44"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+bitbot::Encos_CANBusDevice 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classbitbot_1_1Encos__CANBusDevice__coll__graph.png" border="0" usemap="#abitbot_1_1Encos__CANBusDevice_coll__map" alt="Collaboration graph"/></div>
+<map name="abitbot_1_1Encos__CANBusDevice_coll__map" id="abitbot_1_1Encos__CANBusDevice_coll__map">
+<area shape="rect" title="Encos总线设备类，继承自EncosDevice, 用户可以使用该类来管理Encos总线设备。 该类型仅适用于开发者使用，用户无需关心其实现细节。该类型设备是指实际挂载在EtherCAT总线上的设备。" alt="" coords="5,152,216,177"/>
+<area shape="rect" href="classbitbot_1_1EncosDevice.html" title="Encos设备类，继承自Device, 用户可以使用该类来管理Encos设备。" alt="" coords="35,79,186,104"/>
+<area shape="poly" title=" " alt="" coords="113,118,113,152,108,152,108,118"/>
+<area shape="rect" title=" " alt="" coords="77,5,144,31"/>
+<area shape="poly" title=" " alt="" coords="113,44,113,79,108,79,108,44"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a96f45503b0bc89a66eec88886a88fd9d" id="r_a96f45503b0bc89a66eec88886a88fd9d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbitbot_1_1Encos__CANBusDevice.html#a96f45503b0bc89a66eec88886a88fd9d">Encos_CANBusDevice</a> (const pugi::xml_node &amp;device_node)</td></tr>
+<tr class="memdesc:a96f45503b0bc89a66eec88886a88fd9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数  <br /></td></tr>
+<tr class="separator:a96f45503b0bc89a66eec88886a88fd9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa712c7e1ead83c39393b9e1a34e5e4dd" id="r_aa712c7e1ead83c39393b9e1a34e5e4dd"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbitbot_1_1Encos__CANBusDevice.html#aa712c7e1ead83c39393b9e1a34e5e4dd">~Encos_CANBusDevice</a> ()=default</td></tr>
+<tr class="memdesc:aa712c7e1ead83c39393b9e1a34e5e4dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">析构函数  <br /></td></tr>
+<tr class="separator:aa712c7e1ead83c39393b9e1a34e5e4dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classbitbot_1_1EncosDevice"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classbitbot_1_1EncosDevice')"><img src="closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="classbitbot_1_1EncosDevice.html">bitbot::EncosDevice</a></td></tr>
+<tr class="memitem:af4737b78b9b473eed8cf05235eea8ab8 inherit pub_methods_classbitbot_1_1EncosDevice" id="r_af4737b78b9b473eed8cf05235eea8ab8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbitbot_1_1EncosDevice.html#af4737b78b9b473eed8cf05235eea8ab8">EncosDevice</a> (const pugi::xml_node &amp;device_node)</td></tr>
+<tr class="memdesc:af4737b78b9b473eed8cf05235eea8ab8 inherit pub_methods_classbitbot_1_1EncosDevice"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数  <br /></td></tr>
+<tr class="separator:af4737b78b9b473eed8cf05235eea8ab8 inherit pub_methods_classbitbot_1_1EncosDevice"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a510c5e0f8ee795b5fd64a41838b94989 inherit pub_methods_classbitbot_1_1EncosDevice" id="r_a510c5e0f8ee795b5fd64a41838b94989"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbitbot_1_1EncosDevice.html#a510c5e0f8ee795b5fd64a41838b94989">UpdateRuntimeData</a> ()=0</td></tr>
+<tr class="memdesc:a510c5e0f8ee795b5fd64a41838b94989 inherit pub_methods_classbitbot_1_1EncosDevice"><td class="mdescLeft">&#160;</td><td class="mdescRight">更新运行时数据，该函数会被内核周期性调用。  <br /></td></tr>
+<tr class="separator:a510c5e0f8ee795b5fd64a41838b94989 inherit pub_methods_classbitbot_1_1EncosDevice"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected 成员函数</h2></td></tr>
+<tr class="memitem:ad4c0f28e4d39a6bb7188f20b3154021d" id="r_ad4c0f28e4d39a6bb7188f20b3154021d"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbitbot_1_1Encos__CANBusDevice.html#ad4c0f28e4d39a6bb7188f20b3154021d">get_EtherCAT_Slave_ID</a> () const =0</td></tr>
+<tr class="memdesc:ad4c0f28e4d39a6bb7188f20b3154021d"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取EtherCAT从站ID  <br /></td></tr>
+<tr class="separator:ad4c0f28e4d39a6bb7188f20b3154021d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bdce4c4c6bbe1c0227481c0b8fedf6b" id="r_a9bdce4c4c6bbe1c0227481c0b8fedf6b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbitbot_1_1Encos__CANBusDevice.html#a9bdce4c4c6bbe1c0227481c0b8fedf6b">get_CAN_IDs</a> (std::vector&lt; size_t &gt; &amp;ids) const =0</td></tr>
+<tr class="memdesc:a9bdce4c4c6bbe1c0227481c0b8fedf6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取EtherCAT转CAN总线的设备ID  <br /></td></tr>
+<tr class="separator:a9bdce4c4c6bbe1c0227481c0b8fedf6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfd5cf81c781feda1ae94457b2515c35" id="r_abfd5cf81c781feda1ae94457b2515c35"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbitbot_1_1Encos__CANBusDevice.html#abfd5cf81c781feda1ae94457b2515c35">ReadBus</a> (const <a class="el" href="structCAN__Device__Msg.html">CAN_Device_Msg</a> &amp;data)=0</td></tr>
+<tr class="memdesc:abfd5cf81c781feda1ae94457b2515c35"><td class="mdescLeft">&#160;</td><td class="mdescRight">进行一次读取操作，开发者需要在该函数中实现自己的读取逻辑。该函数会被总线管理器周期性调用。  <br /></td></tr>
+<tr class="separator:abfd5cf81c781feda1ae94457b2515c35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4cba04a7d9317437573abda07096932" id="r_ab4cba04a7d9317437573abda07096932"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbitbot_1_1Encos__CANBusDevice.html#ab4cba04a7d9317437573abda07096932">WriteBus</a> (<a class="el" href="structCAN__Device__Msg.html">CAN_Device_Msg</a> &amp;data)=0</td></tr>
+<tr class="memdesc:ab4cba04a7d9317437573abda07096932"><td class="mdescLeft">&#160;</td><td class="mdescRight">进行一次写入操作，开发者需要在该函数中实现自己的写入逻辑。该函数会被总线管理器周期性调用。  <br /></td></tr>
+<tr class="separator:ab4cba04a7d9317437573abda07096932"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6a6298de9dcfecbd017477ed94d0307" id="r_ad6a6298de9dcfecbd017477ed94d0307"><td class="memItemLeft" align="right" valign="top">virtual constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbitbot_1_1Encos__CANBusDevice.html#ad6a6298de9dcfecbd017477ed94d0307">VirtualBusDevice</a> () const final override</td></tr>
+<tr class="memdesc:ad6a6298de9dcfecbd017477ed94d0307"><td class="mdescLeft">&#160;</td><td class="mdescRight">判断设备是否为虚拟总线设备，虚拟总线设备是指未实际挂载在EtherCAT总线上，但也需要进行数据交换的设备。  <br /></td></tr>
+<tr class="separator:ad6a6298de9dcfecbd017477ed94d0307"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classbitbot_1_1EncosDevice"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classbitbot_1_1EncosDevice')"><img src="closed.png" alt="-"/>&#160;Protected 成员函数 继承自 <a class="el" href="classbitbot_1_1EncosDevice.html">bitbot::EncosDevice</a></td></tr>
+<tr class="memitem:ae42ac2bf5099c2a8f53862c910806ce6 inherit pro_methods_classbitbot_1_1EncosDevice" id="r_ae42ac2bf5099c2a8f53862c910806ce6"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbitbot_1_1EncosDevice.html#ae42ac2bf5099c2a8f53862c910806ce6">PowerOn</a> ()</td></tr>
+<tr class="memdesc:ae42ac2bf5099c2a8f53862c910806ce6 inherit pro_methods_classbitbot_1_1EncosDevice"><td class="mdescLeft">&#160;</td><td class="mdescRight">默认的上电函数，开发者可以在该函数中实现自己的上电逻辑。  <br /></td></tr>
+<tr class="separator:ae42ac2bf5099c2a8f53862c910806ce6 inherit pro_methods_classbitbot_1_1EncosDevice"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4adffc3b7ddc7a358173b51fbbb7823 inherit pro_methods_classbitbot_1_1EncosDevice" id="r_ae4adffc3b7ddc7a358173b51fbbb7823"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbitbot_1_1EncosDevice.html#ae4adffc3b7ddc7a358173b51fbbb7823">HasPowerCfg</a> ()</td></tr>
+<tr class="memdesc:ae4adffc3b7ddc7a358173b51fbbb7823 inherit pro_methods_classbitbot_1_1EncosDevice"><td class="mdescLeft">&#160;</td><td class="mdescRight">判断设备是否有上电配置，开发者可以根据设备类型的实际情况实现该函数。  <br /></td></tr>
+<tr class="separator:ae4adffc3b7ddc7a358173b51fbbb7823 inherit pro_methods_classbitbot_1_1EncosDevice"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0497fb2c78230d39cfb671beaf14f850 inherit pro_methods_classbitbot_1_1EncosDevice" id="r_a0497fb2c78230d39cfb671beaf14f850"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbitbot_1_1EncosDevice.html#a0497fb2c78230d39cfb671beaf14f850">PowerOff</a> ()</td></tr>
+<tr class="memdesc:a0497fb2c78230d39cfb671beaf14f850 inherit pro_methods_classbitbot_1_1EncosDevice"><td class="mdescLeft">&#160;</td><td class="mdescRight">默认的下电函数，开发者可以在该函数中实现自己的下电逻辑。  <br /></td></tr>
+<tr class="separator:a0497fb2c78230d39cfb671beaf14f850 inherit pro_methods_classbitbot_1_1EncosDevice"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
+友元</h2></td></tr>
+<tr class="memitem:a1ed0f70327c0cb54a97a803f8ae81496" id="r_a1ed0f70327c0cb54a97a803f8ae81496"><td class="memItemLeft" align="right" valign="top"><a id="a1ed0f70327c0cb54a97a803f8ae81496" name="a1ed0f70327c0cb54a97a803f8ae81496"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>EncosBus</b></td></tr>
+<tr class="separator:a1ed0f70327c0cb54a97a803f8ae81496"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>Encos总线设备类，继承自EncosDevice, 用户可以使用该类来管理Encos总线设备。 该类型仅适用于开发者使用，用户无需关心其实现细节。该类型设备是指实际挂载在EtherCAT总线上的设备。 </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a96f45503b0bc89a66eec88886a88fd9d" name="a96f45503b0bc89a66eec88886a88fd9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96f45503b0bc89a66eec88886a88fd9d">&#9670;&#160;</a></span>Encos_CANBusDevice()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bitbot::Encos_CANBusDevice::Encos_CANBusDevice </td>
+          <td>(</td>
+          <td class="paramtype">const pugi::xml_node &amp;&#160;</td>
+          <td class="paramname"><em>device_node</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>构造函数 </p>
+<p>构造函数，该函数由Bitbot Encos内核创建。</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">device_node</td><td>设备节点的配置文件 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa712c7e1ead83c39393b9e1a34e5e4dd" name="aa712c7e1ead83c39393b9e1a34e5e4dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa712c7e1ead83c39393b9e1a34e5e4dd">&#9670;&#160;</a></span>~Encos_CANBusDevice()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bitbot::Encos_CANBusDevice::~Encos_CANBusDevice </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>析构函数 </p>
+<p>析构函数。设备的生命期由Bitbot Encos内核管理，开发者无需关心设备生命周期。 </p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a9bdce4c4c6bbe1c0227481c0b8fedf6b" name="a9bdce4c4c6bbe1c0227481c0b8fedf6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bdce4c4c6bbe1c0227481c0b8fedf6b">&#9670;&#160;</a></span>get_CAN_IDs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void bitbot::Encos_CANBusDevice::get_CAN_IDs </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; size_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>ids</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取EtherCAT转CAN总线的设备ID </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ids</td><td>设备ID列表。一个设备可以有多个CAN总线ID。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad4c0f28e4d39a6bb7188f20b3154021d" name="ad4c0f28e4d39a6bb7188f20b3154021d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4c0f28e4d39a6bb7188f20b3154021d">&#9670;&#160;</a></span>get_EtherCAT_Slave_ID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual size_t bitbot::Encos_CANBusDevice::get_EtherCAT_Slave_ID </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取EtherCAT从站ID </p>
+<dl class="section return"><dt>返回</dt><dd>size_t 从站ID </dd></dl>
+
+</div>
+</div>
+<a id="abfd5cf81c781feda1ae94457b2515c35" name="abfd5cf81c781feda1ae94457b2515c35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfd5cf81c781feda1ae94457b2515c35">&#9670;&#160;</a></span>ReadBus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void bitbot::Encos_CANBusDevice::ReadBus </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structCAN__Device__Msg.html">CAN_Device_Msg</a> &amp;&#160;</td>
+          <td class="paramname"><em>data</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>进行一次读取操作，开发者需要在该函数中实现自己的读取逻辑。该函数会被总线管理器周期性调用。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>读取的数据 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad6a6298de9dcfecbd017477ed94d0307" name="ad6a6298de9dcfecbd017477ed94d0307"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6a6298de9dcfecbd017477ed94d0307">&#9670;&#160;</a></span>VirtualBusDevice()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual constexpr bool bitbot::Encos_CANBusDevice::VirtualBusDevice </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">final</span><span class="mlabel">override</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>判断设备是否为虚拟总线设备，虚拟总线设备是指未实际挂载在EtherCAT总线上，但也需要进行数据交换的设备。 </p>
+<dl class="section return"><dt>返回</dt><dd>true </dd>
+<dd>
+false </dd></dl>
+
+<p>实现了 <a class="el" href="classbitbot_1_1EncosDevice.html#a089655ded7c251c1d8b0499e6e747792">bitbot::EncosDevice</a>.</p>
+
+</div>
+</div>
+<a id="ab4cba04a7d9317437573abda07096932" name="ab4cba04a7d9317437573abda07096932"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4cba04a7d9317437573abda07096932">&#9670;&#160;</a></span>WriteBus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void bitbot::Encos_CANBusDevice::WriteBus </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structCAN__Device__Msg.html">CAN_Device_Msg</a> &amp;&#160;</td>
+          <td class="paramname"><em>data</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>进行一次写入操作，开发者需要在该函数中实现自己的写入逻辑。该函数会被总线管理器周期性调用。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>写入的数据 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>/home/zhouzishun/libBitbotEncos/Bitbot_Encos/include/device/<a class="el" href="Encos__device_8hpp_source.html">Encos_device.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>bitbot</b></li><li class="navelem"><a class="el" href="classbitbot_1_1Encos__CANBusDevice.html">Encos_CANBusDevice</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>
