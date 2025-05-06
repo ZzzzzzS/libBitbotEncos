@@ -1,6 +1,6 @@
 var indexSectionsWithContent =
 {
-  0: "abcdeghikmprstuvwy~位力接电硬软速配驱",
+  0: "abcdeghikmprstuvwy~位免力接电硬致软运速配驱",
   1: "ceimy",
   2: "ey",
   3: "deghimprsuvwy~",

@@ -1,0 +1,20 @@
+<map id="C:/Users/ZhouZishun/Documents/Workspace/libBitbotEncos/include/device/Encos_joint.h" name="C:/Users/ZhouZishun/Documents/Workspace/libBitbotEncos/include/device/Encos_joint.h">
+<area shape="rect" id="Node000001" title="Bitbot Encos joint header file" alt="" coords="269,5,431,80"/>
+<area shape="rect" id="Node000002" href="$_encos__device_8hpp.html" title="Bitbot Encos device header file" alt="" coords="144,128,273,155"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="298,83,241,121,238,117,295,78"/>
+<area shape="rect" id="Node000004" href="$_encos__bus__msg_8h.html" title="Bitbot Encos bus msg header file" alt="" coords="248,211,402,237"/>
+<area shape="poly" id="edge8_Node000001_Node000004" title=" " alt="" coords="347,81,331,196,326,195,342,80"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="354,128,415,155"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="366,79,377,112,372,114,361,81"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="439,128,488,155"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="395,78,439,116,435,120,391,82"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,203,143,245"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="189,157,123,197,120,192,186,153"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="228,153,296,200,293,204,225,157"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="167,211,224,237"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="209,156,202,196,197,195,204,155"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="238,293,316,320"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="319,239,294,282,289,279,315,236"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="340,293,405,320"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="334,236,360,279,355,282,330,239"/>
+</map>

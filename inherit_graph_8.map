@@ -1,5 +1,5 @@
 <map id="类继承关系图" name="类继承关系图">
-<area shape="rect" id="Node000000" title=" " alt="" coords="5,13,88,38"/>
-<area shape="rect" id="Node000001" href="$classbitbot_1_1EncosKernel.html" title="Bitbot Encos 内核类型，继承自KernelTpl" alt="" coords="136,5,283,45"/>
-<area shape="poly" id="edge7_Node000000_Node000001" title=" " alt="" coords="102,23,136,23,136,28,102,28"/>
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,13,82,40"/>
+<area shape="rect" id="Node000001" href="$classbitbot_1_1_encos_kernel.html" title="Bitbot Encos 内核类型，继承自KernelTpl" alt="" coords="130,5,265,48"/>
+<area shape="poly" id="edge7_Node000000_Node000001" title=" " alt="" coords="98,24,129,24,129,29,98,29"/>
 </map>

@@ -1,6 +1,0 @@
-\_form#0=550x14:\[
-I = (Kp \cdot (Position - CurrentPosition) + Kd \cdot (Velocity - CurrentVelocity) + Torque) / torque\_constant
-\]
-\_form#1=480x14:\begin{eqnarray*}
-    I=(Kd \cdot (TargetPos-CurrentPos)+Kd \cdot (TargetVel-CurrentVel)+Torque)/K_t
-\end{eqnarray*}

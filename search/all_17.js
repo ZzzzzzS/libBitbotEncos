@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['硬件配置_0',['硬件配置',['../index.html#autotoc_md14',1,'']]]
+  ['电机控制说明_0',['电机控制说明',['../index.html#autotoc_md18',1,'']]],
+  ['电流模式_1',['力矩/电流模式',['../md__bitbot_encos_motor_motion.html#autotoc_md13',1,'']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['驱动板说明_0',['Bitbot Encos 驱动板说明',['../md_BitbotEncosBusConfig.html',1,'']]]
+  ['运动模式_0',['运动模式',['../md__bitbot_encos_motor_motion.html#autotoc_md10',1,'']]]
 ];

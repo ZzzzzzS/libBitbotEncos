@@ -1,0 +1,5 @@
+<map id="EtherCAT_Msg" name="EtherCAT_Msg">
+<area shape="rect" id="Node000001" title="Bitbot Encos 中的EtherCAT消息结构体。" alt="" coords="15,96,126,123"/>
+<area shape="rect" id="Node000002" href="$struct_c_a_n___device___msg.html" title="Bitbot Encos 中的CAN消息结构体。" alt="" coords="5,5,136,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="73,48,73,95,68,95,68,48"/>
+</map>

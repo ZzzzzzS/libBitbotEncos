@@ -3,16 +3,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>BitbotEncos: BitbotEncos</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -35,10 +37,15 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- 制作者 Doxygen 1.9.8 -->
+<!-- 制作者 Doxygen 1.13.2 -->
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
 /* @license-end */
 </script>
 <script type="text/javascript" src="menudata.js"></script>
@@ -46,8 +53,8 @@ var searchBox = new SearchBox("searchBox", "search/",'.html');
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
 });
 /* @license-end */
 </script>
@@ -65,7 +72,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('index.html',''); initResizable(); });
+$(function(){initNavTree('index.html',''); initResizable(true); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -94,47 +101,55 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
   <div class="headertitle"><div class="title">BitbotEncos </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md13"></a>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md14"></a>
 BitbotEncos</h1>
 <p>Bitbot Encos是Bitbot机器人控制框架的一个实例。该实例提供Encos电机相关的驱动程序使用户可以快速在安装了Encos电机和EtherCAT转CAN卡的机器人实物上部署自己的控制算法。</p>
 <blockquote class="doxtable">
-<p>&zwj;该Bitbot实例基于Bitbot机器人软件框架设计，关于Bitbot框架的更多详细信息请参阅其<a href="https://bitbot.lmy.name/">官方网站</a>。 </p>
+<p>该Bitbot实例基于Bitbot机器人软件框架设计，关于Bitbot框架的更多详细信息请参阅其<a href="https://bitbot.lmy.name/">官方网站</a>。 </p>
 </blockquote>
-<h1><a class="anchor" id="autotoc_md14"></a>
+<h1><a class="anchor" id="autotoc_md15"></a>
 硬件配置</h1>
-<p>BitbotEncos支持的硬件配置包括<a href="http://encos.cn/">Encos电机</a>，<a href="https://www.yesense.com/yis320">Yesense IMU</a>，和带有CAN总线的智能电池。BitbotEncos使用Encos推出的EtherCAT转CAN板卡来管理CAN总线设备。关于该板卡的详细信息和电机接线说明请参阅<a class="el" href="md_BitbotEncosBusConfig.html">Bitbot Encos 驱动板说明</a>章节。</p>
+<p>BitbotEncos支持的硬件配置包括<a href="http://encos.cn/">Encos电机</a>，<a href="https://www.yesense.com/yis320">Yesense IMU</a>，和带有CAN总线的智能电池。BitbotEncos使用Encos推出的EtherCAT转CAN板卡来管理CAN总线设备。关于该板卡的详细信息和电机接线说明请参阅<a class="el" href="md__bitbot_encos_bus_config.html">Bitbot Encos 驱动板说明</a>章节。</p>
 <p>BitbotEncos的硬件连接关系如下图所示，其中slave0, slave1指的是Bitbot Encos驱动板，PC选用的是配备有以太网功能的计算机，且安装有具备实时内核的linux操作系统。</p>
 <div class="image">
 <object type="image/svg+xml" data="Hardware.svg" style="pointer-events: none;"></object>
 <div class="caption">
 Bitbot Encos电气连接关系</div></div>
-    <h1><a class="anchor" id="autotoc_md15"></a>
+    <h1><a class="anchor" id="autotoc_md16"></a>
 软件配置</h1>
 <p>Bitbot Encos需要在具备实时内核的linux操作系统上运行，已在Ubuntu24.04上测试。Bitbot Encos无需任何依赖，仅需在<a href="https://github.com/ZzzzzzS/libBitbotEncos/releases">发布页面</a>下载即可开始使用。</p>
-<p>注意，soem需要操作rawsocket，因此程序需要root权限或者赋予capability才能运行。可以在生成最终可执行程序的<code>CMakeList.txt</code>的<code>add_executable</code>函数后添加 </p><div class="fragment"><div class="line">add_custom_command(TARGET main_app POST_BUILD COMMAND sudo setcap cap_net_admin,cap_net_raw=eip $&lt;TARGET_FILE:main_app&gt; )</div>
-</div><!-- fragment --><p> 来自动为可执行文件添加capability，实现无需root权限运行。该命令中的<code>main_app</code>为最终可执行项目的名称，请按需替换成用户定义的名称。**注意，该命令使用了sudo命令，请确保当前用户组属于sudo组，且sudo指令无需输入密码！** 否则编译过程将会卡死。用户也可在构建完成后手动执行<code>sudo setcap cap_net_admin,cap_net_raw=eip ./main_app</code>或直接使用root用户运行程序来解决rawsocket的读写问题。</p>
+<p>注意，soem需要操作rawsocket，因此程序需要root权限或者赋予capability才能运行。可以在生成最终可执行程序的<code>CMakeList.txt</code>的<code>add_executable</code>函数后添加</p>
+<div class="fragment"><div class="line">add_custom_command(TARGET main_app POST_BUILD COMMAND sudo setcap cap_net_admin,cap_net_raw=eip $&lt;TARGET_FILE:main_app&gt; )</div>
+</div><!-- fragment --><p>来自动为可执行文件添加capability，实现无需root权限运行。该命令中的<code>main_app</code>为最终可执行项目的名称，请按需替换成用户定义的名称。 <b>注意，该命令使用了sudo命令，请确保当前用户组属于sudo组，且sudo指令无需输入密码！</b> 否则编译过程将会卡死。用户也可在构建完成后手动执行<code>sudo setcap cap_net_admin,cap_net_raw=eip ./main_app</code>或直接使用root用户运行程序来解决rawsocket的读写问题。</p>
 <p>关于soem无root读写rawsocket详情，请参阅<a href="https://github.com/OpenEtherCATsociety/SOEM/issues/83">soem-issue83</a>。关于linux读写rawsocket的问题请参阅<a href="https://squidarth.com/networking/systems/rc/2018/05/28/using-raw-sockets.html">Using Linux Raw Sockets</a>。关于如何使sudo命令免密码请参阅<a href="https://cn.linux-terminal.com/?p=2065">这里</a>。</p>
-<h1><a class="anchor" id="autotoc_md16"></a>
-配置说明</h1>
-<p>和<a href="https://github.com/limymy/bitbot-mujoco-demo">其它Bitbot实例</a>一样，BitbotEncos需要根据硬件电气连接情况设置配置文件才能正确运行。关于配置文件的详细信息请参阅<a class="el" href="md_BitbotEncosConfig.html">Bitbot Encos的配置文件</a>章节，或访问<a href="https://bitbot.lmy.name/docs/bitbot-config_file">https://bitbot.lmy.name/docs/bitbot-config_file</a>获取配置文件的详细信息。</p>
 <h1><a class="anchor" id="autotoc_md17"></a>
-电机控制说明</h1>
-<p>Encos电机支持位置控制，速度控制，力矩/电流控制，和运动模式4种控制模式。关于电机控制的详细说明请参阅<a class="el" href="md_BitbotEncosMotorMotion.html">Encos电机模式简介</a>。关于的电机相关API请参阅<a class="el" href="classbitbot_1_1EncosJoint.html">EncosJoint</a>。</p>
+配置说明</h1>
+<p>和<a href="https://github.com/limymy/bitbot-mujoco-demo">其它Bitbot实例</a>一样，BitbotEncos需要根据硬件电气连接情况设置配置文件才能正确运行。关于配置文件的详细信息请参阅<a class="el" href="md__bitbot_encos_config.html">Bitbot Encos的配置文件</a>章节，或访问<a href="https://bitbot.lmy.name/docs/bitbot-config_file">https://bitbot.lmy.name/docs/bitbot-config_file</a>获取配置文件的详细信息。</p>
 <h1><a class="anchor" id="autotoc_md18"></a>
+电机控制说明</h1>
+<p>Encos电机支持位置控制，速度控制，力矩/电流控制，和运动模式4种控制模式。关于电机控制的详细说明请参阅<a class="el" href="md__bitbot_encos_motor_motion.html">Encos电机模式简介</a>。关于的电机相关API请参阅<a class="el" href="classbitbot_1_1_encos_joint.html">EncosJoint</a>。</p>
+<h1><a class="anchor" id="autotoc_md19"></a>
 API</h1>
 <ul>
 <li>Bitbot内核接口: <a href="https://bitbot.lmy.name/docs/bitbot-programming">https://bitbot.lmy.name/docs/bitbot-programming</a></li>
-<li>电机控制：<a class="el" href="classbitbot_1_1EncosJoint.html">EncosJoint</a></li>
-<li>IMU控制：<a class="el" href="classbitbot_1_1YesenseIMU.html">YesenseIMU</a></li>
-<li>电池控制：TBD... </li>
+<li>电机控制：<a class="el" href="classbitbot_1_1_encos_joint.html">EncosJoint</a></li>
+<li>IMU控制：<a class="el" href="classbitbot_1_1_yesense_i_m_u.html">YesenseIMU</a></li>
+<li>电池控制：TBD...</li>
 </ul>
+<h1><a class="anchor" id="autotoc_md20"></a>
+免责声明</h1>
+<p>机器人实物实验是具备一定风险等级的实验。机器人运行时，请勿将身体任何部位伸进机器人的任何空洞内或靠近关节附近。 <b>开机后请务必确保紧握急停按钮。建议用户在实物实验前进行充分的仿真验证，在实物实验时先不上电空跑来确保安全！</b> 因不当使用本程序造成的一切后果与作者无关。</p>
+<h1><a class="anchor" id="autotoc_md21"></a>
+致谢</h1>
+<p>小伙伴们，感谢你们关注这个开源项目！开源的魅力在于汇聚众人的智慧与力量，共同打造更优秀的软件。如果你在使用过程中遇到问题，无论是功能上的困惑、操作上的卡顿，还是发现了潜在的漏洞，都请大胆地提issue。你的每一个反馈都是我们进步的阶梯，我们期待与你携手，让这个项目不断完善。 同时，我们也热忱欢迎每一位愿意贡献的伙伴。无论是代码优化、功能拓展，还是文档完善，漏洞修复，你的每一份付出都将为项目添砖加瓦。众人拾柴火焰高，让我们一起努力，让Bitbot在大家的共同努力下，绽放出更耀眼的光芒！Make Bitbot Everywhere! </p>
 </div></div><!-- PageDoc -->
+<a href="doxygen_crawl.html"></a>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
   </ul>
 </div>
 </body>

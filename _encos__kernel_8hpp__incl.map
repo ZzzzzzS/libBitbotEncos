@@ -1,0 +1,31 @@
+<map id="C:/Users/ZhouZishun/Documents/Workspace/libBitbotEncos/include/kernel/Encos_kernel.hpp" name="C:/Users/ZhouZishun/Documents/Workspace/libBitbotEncos/include/kernel/Encos_kernel.hpp">
+<area shape="rect" id="Node000001" title="Bitbot Encos kernel header file" alt="" coords="344,5,513,80"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="154,128,288,171"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="357,83,277,123,274,118,354,78"/>
+<area shape="rect" id="Node000003" href="$_encos__bus_8h.html" title="Bitbot Encos bus header file" alt="" coords="312,136,434,163"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="411,82,389,124,384,121,407,79"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="458,136,511,163"/>
+<area shape="poly" id="edge14_Node000001_Node000013" title=" " alt="" coords="451,79,473,121,468,124,446,82"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="536,136,607,163"/>
+<area shape="poly" id="edge15_Node000001_Node000014" title=" " alt="" coords="481,79,543,124,540,129,477,83"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,219,151,261"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="331,166,162,216,161,211,330,161"/>
+<area shape="rect" id="Node000005" href="$_encos__device_8hpp.html" title="Bitbot Encos device header file" alt="" coords="226,227,396,253"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="366,165,331,215,327,212,362,162"/>
+<area shape="rect" id="Node000007" href="$_encos__bus__msg_8h.html" title="Bitbot Encos bus msg header file" alt="" coords="66,317,220,344"/>
+<area shape="poly" id="edge10_Node000003_Node000007" title=" " alt="" coords="325,166,269,187,241,202,216,221,197,240,181,262,157,304,152,302,176,259,193,236,212,217,238,198,267,182,323,161"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="405,317,463,344"/>
+<area shape="poly" id="edge12_Node000003_Node000010" title=" " alt="" coords="383,162,411,218,424,262,432,302,427,303,419,263,406,220,378,164"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="472,227,532,253"/>
+<area shape="poly" id="edge11_Node000003_Node000011" title=" " alt="" coords="393,161,473,215,470,220,390,165"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="556,227,602,253"/>
+<area shape="poly" id="edge13_Node000003_Node000012" title=" " alt="" coords="410,161,474,185,546,216,547,217,544,221,544,221,472,190,408,166"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="244,309,381,352"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="314,254,315,294,309,294,309,254"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="289,256,182,312,180,307,286,252"/>
+<area shape="poly" id="edge9_Node000005_Node000010" title=" " alt="" coords="330,252,406,306,403,310,327,256"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="56,400,134,427"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="138,346,113,388,108,386,134,343"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="159,400,224,427"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="153,343,179,386,174,388,149,346"/>
+</map>

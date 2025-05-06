@@ -25,29 +25,32 @@
 var NAVTREE =
 [
   [ "BitbotEncos", "index.html", [
-    [ "BitbotEncos", "index.html#autotoc_md13", null ],
-    [ "硬件配置", "index.html#autotoc_md14", null ],
-    [ "软件配置", "index.html#autotoc_md15", null ],
-    [ "配置说明", "index.html#autotoc_md16", null ],
-    [ "电机控制说明", "index.html#autotoc_md17", null ],
-    [ "API", "index.html#autotoc_md18", null ],
-    [ "Bitbot Encos 驱动板说明", "md_BitbotEncosBusConfig.html", [
-      [ "接线说明及线序", "md_BitbotEncosBusConfig.html#autotoc_md1", null ]
+    [ "BitbotEncos", "index.html#autotoc_md14", null ],
+    [ "硬件配置", "index.html#autotoc_md15", null ],
+    [ "软件配置", "index.html#autotoc_md16", null ],
+    [ "配置说明", "index.html#autotoc_md17", null ],
+    [ "电机控制说明", "index.html#autotoc_md18", null ],
+    [ "API", "index.html#autotoc_md19", null ],
+    [ "免责声明", "index.html#autotoc_md20", null ],
+    [ "致谢", "index.html#autotoc_md21", null ],
+    [ "Bitbot Encos 驱动板说明", "md__bitbot_encos_bus_config.html", [
+      [ "接线说明及线序", "md__bitbot_encos_bus_config.html#autotoc_md1", null ]
     ] ],
-    [ "Bitbot Encos的配置文件", "md_BitbotEncosConfig.html", [
-      [ "Bitbot Encos配置文件示例", "md_BitbotEncosConfig.html#autotoc_md3", null ],
-      [ "Bitbot Encos的配置文件详细说明", "md_BitbotEncosConfig.html#autotoc_md4", [
-        [ "Encos节点", "md_BitbotEncosConfig.html#autotoc_md5", null ],
-        [ "bus/device节点", "md_BitbotEncosConfig.html#autotoc_md6", [
-          [ "IMU type", "md_BitbotEncosConfig.html#autotoc_md7", null ],
-          [ "Encos type", "md_BitbotEncosConfig.html#autotoc_md8", null ]
+    [ "Bitbot Encos的配置文件", "md__bitbot_encos_config.html", [
+      [ "Bitbot Encos配置文件示例", "md__bitbot_encos_config.html#autotoc_md3", null ],
+      [ "Bitbot Encos的配置文件详细说明", "md__bitbot_encos_config.html#autotoc_md4", [
+        [ "Encos节点", "md__bitbot_encos_config.html#autotoc_md5", null ],
+        [ "bus/device节点", "md__bitbot_encos_config.html#autotoc_md6", [
+          [ "IMU type", "md__bitbot_encos_config.html#autotoc_md7", null ],
+          [ "Encos type", "md__bitbot_encos_config.html#autotoc_md8", null ]
         ] ]
       ] ]
     ] ],
-    [ "Encos电机模式简介", "md_BitbotEncosMotorMotion.html", [
-      [ "位置伺服模式", "md_BitbotEncosMotorMotion.html#autotoc_md10", null ],
-      [ "速度伺服模式", "md_BitbotEncosMotorMotion.html#autotoc_md11", null ],
-      [ "力矩/电流模式", "md_BitbotEncosMotorMotion.html#autotoc_md12", null ]
+    [ "Encos电机模式简介", "md__bitbot_encos_motor_motion.html", [
+      [ "运动模式", "md__bitbot_encos_motor_motion.html#autotoc_md10", null ],
+      [ "位置伺服模式", "md__bitbot_encos_motor_motion.html#autotoc_md11", null ],
+      [ "速度伺服模式", "md__bitbot_encos_motor_motion.html#autotoc_md12", null ],
+      [ "力矩/电流模式", "md__bitbot_encos_motor_motion.html#autotoc_md13", null ]
     ] ],
     [ "类", "annotated.html", [
       [ "类列表", "annotated.html", "annotated_dup" ],
@@ -67,7 +70,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"Encos__bus_8h.html"
+"_encos__bus_8h.html"
 ];
 
 var SYNCONMSG = '点击 关闭 面板同步';

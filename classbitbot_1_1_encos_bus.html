@@ -1,0 +1,274 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>BitbotEncos: bitbot::EncosBus类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">BitbotEncos
+   </div>
+   <div id="projectbrief">Bitbot Encos is a bitbot instance for encos motor.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('classbitbot_1_1_encos_bus.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-attribs">Public 属性</a> &#124;
+<a href="classbitbot_1_1_encos_bus-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">bitbot::EncosBus类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Bitbot Encos总线类，继承自BusManagerTpl，该类型仅适用于开发者使用，用户无需关心其实现细节。  
+ <a href="#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_encos__bus_8h_source.html">Encos_bus.h</a>&gt;</code></p>
+<div class="dynheader">
+类 bitbot::EncosBus 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classbitbot_1_1_encos_bus__inherit__graph.png" border="0" usemap="#abitbot_1_1_encos_bus_inherit__map" alt="Inheritance graph"/></div>
+<map name="abitbot_1_1_encos_bus_inherit__map" id="abitbot_1_1_encos_bus_inherit__map">
+<area shape="rect" title="Bitbot Encos总线类，继承自BusManagerTpl，该类型仅适用于开发者使用，用户无需关心其实现细节。" alt="" coords="39,96,160,123"/>
+<area shape="rect" title=" " alt="" coords="5,5,194,48"/>
+<area shape="poly" title=" " alt="" coords="102,64,102,95,97,95,97,64"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+bitbot::EncosBus 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="classbitbot_1_1_encos_bus__coll__graph.png" border="0" usemap="#abitbot_1_1_encos_bus_coll__map" alt="Collaboration graph"/></div>
+<map name="abitbot_1_1_encos_bus_coll__map" id="abitbot_1_1_encos_bus_coll__map">
+<area shape="rect" title="Bitbot Encos总线类，继承自BusManagerTpl，该类型仅适用于开发者使用，用户无需关心其实现细节。" alt="" coords="39,96,160,123"/>
+<area shape="rect" title=" " alt="" coords="5,5,194,48"/>
+<area shape="poly" title=" " alt="" coords="102,64,102,95,97,95,97,64"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:adbfac8d177c6c9ac426ee0fece398784" id="r_adbfac8d177c6c9ac426ee0fece398784"><td class="memItemLeft" align="right" valign="top"><a id="adbfac8d177c6c9ac426ee0fece398784" name="adbfac8d177c6c9ac426ee0fece398784"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>EncosBus</b> ()</td></tr>
+<tr class="memdesc:adbfac8d177c6c9ac426ee0fece398784"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数 <br /></td></tr>
+<tr class="separator:adbfac8d177c6c9ac426ee0fece398784"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2446a1f0abc8a0c2ec53b4534962abac" id="r_a2446a1f0abc8a0c2ec53b4534962abac"><td class="memItemLeft" align="right" valign="top"><a id="a2446a1f0abc8a0c2ec53b4534962abac" name="a2446a1f0abc8a0c2ec53b4534962abac"></a>
+virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~EncosBus</b> ()</td></tr>
+<tr class="memdesc:a2446a1f0abc8a0c2ec53b4534962abac"><td class="mdescLeft">&#160;</td><td class="mdescRight">析构函数 <br /></td></tr>
+<tr class="separator:a2446a1f0abc8a0c2ec53b4534962abac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61665f32cc6fcef56d237fa24f763556" id="r_a61665f32cc6fcef56d237fa24f763556"><td class="memItemLeft" align="right" valign="top"><a id="a61665f32cc6fcef56d237fa24f763556" name="a61665f32cc6fcef56d237fa24f763556"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>Init</b> ()</td></tr>
+<tr class="memdesc:a61665f32cc6fcef56d237fa24f763556"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化函数 <br /></td></tr>
+<tr class="separator:a61665f32cc6fcef56d237fa24f763556"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ca17937a489b929b5e867c5537eba90" id="r_a5ca17937a489b929b5e867c5537eba90"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5ca17937a489b929b5e867c5537eba90">InitEtherCAT</a> (const std::string &amp;ifname)</td></tr>
+<tr class="memdesc:a5ca17937a489b929b5e867c5537eba90"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化EtherCAT总线  <br /></td></tr>
+<tr class="separator:a5ca17937a489b929b5e867c5537eba90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79c85602d58406e43c021adbeefd7dbb" id="r_a79c85602d58406e43c021adbeefd7dbb"><td class="memItemLeft" align="right" valign="top"><a id="a79c85602d58406e43c021adbeefd7dbb" name="a79c85602d58406e43c021adbeefd7dbb"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>WriteBus</b> ()</td></tr>
+<tr class="memdesc:a79c85602d58406e43c021adbeefd7dbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">写入总线数据，该函数会将数据写入到总线中，该函数会被内核周期性调用。 <br /></td></tr>
+<tr class="separator:a79c85602d58406e43c021adbeefd7dbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66f66d51653118584435c1a881c5e519" id="r_a66f66d51653118584435c1a881c5e519"><td class="memItemLeft" align="right" valign="top"><a id="a66f66d51653118584435c1a881c5e519" name="a66f66d51653118584435c1a881c5e519"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>ReadBus</b> ()</td></tr>
+<tr class="memdesc:a66f66d51653118584435c1a881c5e519"><td class="mdescLeft">&#160;</td><td class="mdescRight">读取总线数据，该函数会从总线中读取数据，该函数会被内核周期性调用。 <br /></td></tr>
+<tr class="separator:a66f66d51653118584435c1a881c5e519"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2699383ca1e313975a280f5edc8665b" id="r_af2699383ca1e313975a280f5edc8665b"><td class="memItemLeft" align="right" valign="top"><a id="af2699383ca1e313975a280f5edc8665b" name="af2699383ca1e313975a280f5edc8665b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>RegisterDevices</b> ()</td></tr>
+<tr class="memdesc:af2699383ca1e313975a280f5edc8665b"><td class="mdescLeft">&#160;</td><td class="mdescRight">注册设备函数，该函数会将设备注册到总线中。开发者可以在该函数中注册自己的设备。 <br /></td></tr>
+<tr class="separator:af2699383ca1e313975a280f5edc8665b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6f3e44803356367328e8fbec65e71fe" id="r_ac6f3e44803356367328e8fbec65e71fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac6f3e44803356367328e8fbec65e71fe">PowerOnDevice</a> (int id=-1)</td></tr>
+<tr class="memdesc:ac6f3e44803356367328e8fbec65e71fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">控制设备上电，该函数会将设备上电。  <br /></td></tr>
+<tr class="separator:ac6f3e44803356367328e8fbec65e71fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fa9a437cbb4893414bd265d96424cb6" id="r_a2fa9a437cbb4893414bd265d96424cb6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2fa9a437cbb4893414bd265d96424cb6">PowerOffDevice</a> (int id=-1)</td></tr>
+<tr class="memdesc:a2fa9a437cbb4893414bd265d96424cb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">控制设备下电，该函数会将设备下电。  <br /></td></tr>
+<tr class="separator:a2fa9a437cbb4893414bd265d96424cb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public 属性</h2></td></tr>
+<tr class="memitem:ae0bf2c45c5102f7fce2504da2675207c" id="r_ae0bf2c45c5102f7fce2504da2675207c"><td class="memItemLeft" align="right" valign="top"><a id="ae0bf2c45c5102f7fce2504da2675207c" name="ae0bf2c45c5102f7fce2504da2675207c"></a>
+std::atomic_bool&#160;</td><td class="memItemRight" valign="bottom"><b>ErrorFlag</b></td></tr>
+<tr class="memdesc:ae0bf2c45c5102f7fce2504da2675207c"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否发生错误 <br /></td></tr>
+<tr class="separator:ae0bf2c45c5102f7fce2504da2675207c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>Bitbot Encos总线类，继承自BusManagerTpl，该类型仅适用于开发者使用，用户无需关心其实现细节。 </p>
+<p>Bitbot Encos总线类，继承自BusManagerTpl，用于管理Bitbot Encos总线设备。 该总线管理器使用Bitbot内核相似的总线管理器模型，与之不同的是，BitbotEncos总线使用了SOEM库来实现EtherCAT总线的通信， 以及使用EtherCAT转CAN总线的方式来实现对Encos电机的控制。 此外还引入了虚拟总线机制来兼容并未实际挂载在EtherCAT总线上，但也需要进行数据交换的设备(e.g. IMU)。 </p>
+</div><h2 class="groupheader">成员函数说明</h2>
+<a id="a5ca17937a489b929b5e867c5537eba90" name="a5ca17937a489b929b5e867c5537eba90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ca17937a489b929b5e867c5537eba90">&#9670;&#160;</a></span>InitEtherCAT()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool bitbot::EncosBus::InitEtherCAT </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>ifname</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>初始化EtherCAT总线 </p>
+<p>初始化EtherCAT总线，使用SOEM库来实现EtherCAT总线的通信。 </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ifname</td><td>网络接口名称 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>true 成功 </dd>
+<dd>
+false 失败 </dd></dl>
+
+</div>
+</div>
+<a id="a2fa9a437cbb4893414bd265d96424cb6" name="a2fa9a437cbb4893414bd265d96424cb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fa9a437cbb4893414bd265d96424cb6">&#9670;&#160;</a></span>PowerOffDevice()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bitbot::EncosBus::PowerOffDevice </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>id</em></span><span class="paramdefsep"> = </span><span class="paramdefval">-1</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>控制设备下电，该函数会将设备下电。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>设备ID，默认为-1，表示所有设备</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>该函数会将设备下电，开发者可以在该函数中实现自己的设备下电逻辑。 </p>
+
+</div>
+</div>
+<a id="ac6f3e44803356367328e8fbec65e71fe" name="ac6f3e44803356367328e8fbec65e71fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6f3e44803356367328e8fbec65e71fe">&#9670;&#160;</a></span>PowerOnDevice()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bitbot::EncosBus::PowerOnDevice </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>id</em></span><span class="paramdefsep"> = </span><span class="paramdefval">-1</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>控制设备上电，该函数会将设备上电。 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>设备ID，默认为-1，表示所有设备</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>该函数会将设备上电，开发者可以在该函数中实现自己的设备上电逻辑。 </p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>C:/Users/ZhouZishun/Documents/Workspace/libBitbotEncos/include/bus/<a class="el" href="_encos__bus_8h_source.html">Encos_bus.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>bitbot</b></li><li class="navelem"><a class="el" href="classbitbot_1_1_encos_bus.html">EncosBus</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

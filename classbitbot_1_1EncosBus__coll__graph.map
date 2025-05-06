@@ -1,5 +1,0 @@
-<map id="bitbot::EncosBus" name="bitbot::EncosBus">
-<area shape="rect" id="Node000001" title="Bitbot Encos总线类，继承自BusManagerTpl，该类型仅适用于开发者使用，用户无需关心其实现细节。" alt="" coords="42,93,173,119"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,209,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="110,59,110,93,105,93,105,59"/>
-</map>

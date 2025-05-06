@@ -1,0 +1,15 @@
+<map id="C:/Users/ZhouZishun/Documents/Workspace/libBitbotEncos/include/bus/Encos_bus_msg.h" name="C:/Users/ZhouZishun/Documents/Workspace/libBitbotEncos/include/bus/Encos_bus_msg.h">
+<area shape="rect" id="Node000001" title="Bitbot Encos bus msg header file" alt="" coords="194,5,356,80"/>
+<area shape="rect" id="Node000002" href="$_encos__bus_8h.html" title="Bitbot Encos bus header file" alt="" coords="9,251,170,325"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="215,92,178,130,137,192,107,252,102,249,132,189,174,126,211,88"/>
+<area shape="rect" id="Node000004" href="$_encos__device_8hpp.html" title="Bitbot Encos device header file" alt="" coords="188,128,362,203"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="278,96,278,128,272,128,272,96"/>
+<area shape="rect" id="Node000005" href="$_encos__joint_8h.html" title="Bitbot Encos joint header file" alt="" coords="380,251,541,325"/>
+<area shape="poly" id="edge7_Node000001_Node000005" title=" " alt="" coords="338,88,376,126,417,189,447,249,443,252,413,192,371,130,334,92"/>
+<area shape="rect" id="Node000003" href="$_encos__kernel_8hpp.html" title="Bitbot Encos kernel header file" alt="" coords="5,373,174,448"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="92,341,92,373,87,373,87,341"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="207,214,147,252,144,248,204,209"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="346,209,405,248,402,252,343,214"/>
+<area shape="rect" id="Node000006" href="$yesense__imu_8h.html" title="Bitbot Encos Yesense IMU header file" alt="" coords="194,251,356,325"/>
+<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="278,219,278,250,272,250,272,219"/>
+</map>

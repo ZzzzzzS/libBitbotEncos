@@ -1,18 +1,18 @@
 var annotated_dup =
 [
     [ "bitbot", null, [
-      [ "Encos_CANBusDevice", "classbitbot_1_1Encos__CANBusDevice.html", "classbitbot_1_1Encos__CANBusDevice" ],
-      [ "Encos_VirtualBusDevice", "classbitbot_1_1Encos__VirtualBusDevice.html", "classbitbot_1_1Encos__VirtualBusDevice" ],
-      [ "EncosBus", "classbitbot_1_1EncosBus.html", "classbitbot_1_1EncosBus" ],
-      [ "EncosDevice", "classbitbot_1_1EncosDevice.html", "classbitbot_1_1EncosDevice" ],
-      [ "EncosJoint", "classbitbot_1_1EncosJoint.html", "classbitbot_1_1EncosJoint" ],
-      [ "EncosKernel", "classbitbot_1_1EncosKernel.html", "classbitbot_1_1EncosKernel" ],
-      [ "ImuData", "structbitbot_1_1ImuData.html", "structbitbot_1_1ImuData" ],
-      [ "ImuRuntimeData", "structbitbot_1_1ImuRuntimeData.html", "structbitbot_1_1ImuRuntimeData" ],
-      [ "MotorConigurationData", "structbitbot_1_1MotorConigurationData.html", "structbitbot_1_1MotorConigurationData" ],
-      [ "MotorRuntimeData", "structbitbot_1_1MotorRuntimeData.html", "structbitbot_1_1MotorRuntimeData" ],
-      [ "YesenseIMU", "classbitbot_1_1YesenseIMU.html", "classbitbot_1_1YesenseIMU" ]
+      [ "Encos_CANBusDevice", "classbitbot_1_1_encos___c_a_n_bus_device.html", "classbitbot_1_1_encos___c_a_n_bus_device" ],
+      [ "Encos_VirtualBusDevice", "classbitbot_1_1_encos___virtual_bus_device.html", "classbitbot_1_1_encos___virtual_bus_device" ],
+      [ "EncosBus", "classbitbot_1_1_encos_bus.html", "classbitbot_1_1_encos_bus" ],
+      [ "EncosDevice", "classbitbot_1_1_encos_device.html", "classbitbot_1_1_encos_device" ],
+      [ "EncosJoint", "classbitbot_1_1_encos_joint.html", "classbitbot_1_1_encos_joint" ],
+      [ "EncosKernel", "classbitbot_1_1_encos_kernel.html", "classbitbot_1_1_encos_kernel" ],
+      [ "ImuData", "structbitbot_1_1_imu_data.html", "structbitbot_1_1_imu_data" ],
+      [ "ImuRuntimeData", "structbitbot_1_1_imu_runtime_data.html", "structbitbot_1_1_imu_runtime_data" ],
+      [ "MotorConigurationData", "structbitbot_1_1_motor_coniguration_data.html", "structbitbot_1_1_motor_coniguration_data" ],
+      [ "MotorRuntimeData", "structbitbot_1_1_motor_runtime_data.html", "structbitbot_1_1_motor_runtime_data" ],
+      [ "YesenseIMU", "classbitbot_1_1_yesense_i_m_u.html", "classbitbot_1_1_yesense_i_m_u" ]
     ] ],
-    [ "CAN_Device_Msg", "structCAN__Device__Msg.html", "structCAN__Device__Msg" ],
-    [ "EtherCAT_Msg", "structEtherCAT__Msg.html", "structEtherCAT__Msg" ]
+    [ "CAN_Device_Msg", "struct_c_a_n___device___msg.html", "struct_c_a_n___device___msg" ],
+    [ "EtherCAT_Msg", "struct_ether_c_a_t___msg.html", "struct_ether_c_a_t___msg" ]
 ];
