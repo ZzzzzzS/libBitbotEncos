@@ -12,6 +12,8 @@ BitbotEncos支持的硬件配置包括[Encos电机](http://encos.cn/)，[Yesense
 
 BitbotEncos的硬件连接关系如下图所示，其中slave0, slave1指的是Bitbot Encos驱动板，PC选用的是配备有以太网功能的计算机，且安装有具备实时内核的linux操作系统。
 
+**注意，在安装电机前请务必配置好电机CAN总线ID**，多个电机接入同一条总线后无法修改ID。
+
 ![Bitbot Encos电气连接关系](./doc/Hardware.svg)
 
 # 软件配置

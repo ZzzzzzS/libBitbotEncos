@@ -14,12 +14,12 @@
 
 namespace bitbot
 {
-    YesenseIMU::YesenseIMU(const pugi::xml_node &imu_node)
+    YesenseIMU::YesenseIMU(const pugi::xml_node& imu_node)
         : Encos_VirtualBusDevice(imu_node) // TODO: check the correctness of the constructor
     {
         this->basic_type_ = static_cast<uint32_t>(BasicDeviceType::IMU);
         this->type_ = static_cast<uint32_t>(EncosDeviceType::Yesense_IMU);
-        this->monitor_header_.headers = {"roll", "pitch", "yaw", "acc_x", "acc_y", "acc_z", "gyro_x", "gyro_y", "gyro_z"};
+        this->monitor_header_.headers = { "roll", "pitch", "yaw", "acc_x", "acc_y", "acc_z", "gyro_x", "gyro_y", "gyro_z","IMU_temp" };
         this->monitor_data_.resize(monitor_header_.headers.size());
         // TODO: get name and speed from xml
         ConfigParser::ParseAttribute2s(this->dev, imu_node.attribute("dev"));
@@ -54,15 +54,15 @@ namespace bitbot
 
     float YesenseIMU::GetRoll()
     {
-        return this->imu_data_.runtime.roll;
+        return this->imu_data_.runtime.roll.load() * d2r;
     }
     float YesenseIMU::GetPitch()
     {
-        return this->imu_data_.runtime.pitch;
+        return this->imu_data_.runtime.pitch.load() * d2r;
     }
     float YesenseIMU::GetYaw()
     {
-        return imu_data_.runtime.yaw;
+        return imu_data_.runtime.yaw.load() * d2r;
     }
     float YesenseIMU::GetAccX()
     {
@@ -78,16 +78,21 @@ namespace bitbot
     }
     float YesenseIMU::GetGyroX()
     {
-        return this->imu_data_.runtime.w_x;
+        return this->imu_data_.runtime.w_x.load() * d2r;
     }
     float YesenseIMU::GetGyroY()
     {
-        return this->imu_data_.runtime.w_y;
+        return this->imu_data_.runtime.w_y.load() * d2r;
     }
     float YesenseIMU::GetGyroZ()
     {
-        return this->imu_data_.runtime.w_z;
+        return this->imu_data_.runtime.w_z.load() * d2r;
     }
+    float YesenseIMU::GetIMUTemperature()
+    {
+        return this->imu_data_.runtime.IMU_temp.load();
+    }
+
 
     void YesenseIMU::UpdateRuntimeData()
     {
@@ -101,6 +106,7 @@ namespace bitbot
         this->monitor_data_[6] = this->imu_data_.runtime.w_x.load();
         this->monitor_data_[7] = this->imu_data_.runtime.w_y.load();
         this->monitor_data_[8] = this->imu_data_.runtime.w_z.load();
+        this->monitor_data_[9] = this->imu_data_.runtime.IMU_temp.load();
     }
 
     void YesenseIMU::ReadOnce() // call this function in the bus loop
@@ -139,7 +145,7 @@ namespace bitbot
             }
             else if (crc_err == ret || analysis_ok == ret) /*删除已解析完的完整一帧*/
             {
-                output_data_header_t *header = (output_data_header_t *)(g_recv_buf + pos);
+                output_data_header_t* header = (output_data_header_t*)(g_recv_buf + pos);
                 unsigned int frame_len = header->len + YIS_OUTPUT_MIN_BYTES;
                 cnt -= frame_len;
                 pos += frame_len;
@@ -168,5 +174,6 @@ namespace bitbot
         this->imu_data_.runtime.roll = g_output_info.attitude.roll;
         this->imu_data_.runtime.pitch = g_output_info.attitude.pitch;
         this->imu_data_.runtime.yaw = g_output_info.attitude.yaw;
+        this->imu_data_.runtime.IMU_temp = g_output_info.sensor_temp;
     }
 };

@@ -52,6 +52,9 @@ namespace bitbot
 
         /// @brief IMU当前z轴角速度(rad/s)
         std::atomic<float> w_z = 0;
+
+        /// @brief IMU当前温度(°C)
+        std::atomic<float> IMU_temp = 0;
     };
 
     /**
@@ -151,6 +154,13 @@ namespace bitbot
          */
         float GetGyroZ();
 
+        /**
+         * @brief 获取IMU温度
+         *
+         * @return float 单位为摄氏度(°C)
+         */
+        float GetIMUTemperature();
+
     private:
         void UpdateRuntimeData() override;
         void UpdateImuDataFromBus();
@@ -175,5 +185,8 @@ namespace bitbot
         unsigned short cnt = 0;
         int pos = 0;
         speed_t speed = B921600;
+
+        constexpr float r2d = 180.0f / M_PI;
+        constexpr float d2r = M_PI / 180.0f;
     };
 }
