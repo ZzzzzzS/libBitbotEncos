@@ -44,7 +44,6 @@ Encos电机支持位置控制，速度控制，力矩/电流控制，和运动�
 * Bitbot内核接口: <https://bitbot.lmy.name/docs/bitbot-programming>
 * 电机控制：@ref bitbot::EncosJoint "EncosJoint"
 * IMU控制：@ref bitbot::YesenseIMU "YesenseIMU"
-* 电池控制：TBD...
 
 # 免责声明
 
