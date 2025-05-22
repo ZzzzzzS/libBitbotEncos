@@ -18,7 +18,7 @@
 
 namespace bitbot
 {
-    class LimxBus;
+    class EncosBus;
 
     /**
      * @brief IMU运行时数据结构体
