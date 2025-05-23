@@ -91,8 +91,8 @@ namespace bitbot
         this->CAN_BusWriteBuffer.resize(ec_slavecount);
         for (size_t i = 0; i < ec_slavecount; i++)
         {
-            EtherCAT_Msg *slave_dest_o = (EtherCAT_Msg *)(ec_slave[i + 1].outputs);
-            EtherCAT_Msg *slave_dest_i = (EtherCAT_Msg *)(ec_slave[i + 1].inputs);
+            EtherCAT_Msg* slave_dest_o = (EtherCAT_Msg*)(ec_slave[i + 1].outputs);
+            EtherCAT_Msg* slave_dest_i = (EtherCAT_Msg*)(ec_slave[i + 1].inputs);
             if (slave_dest_o == nullptr)
             {
                 this->logger_->error("Failed to get EtherCAT slave output buffer, check your connection");
@@ -118,7 +118,7 @@ namespace bitbot
         {
             if (dev->VirtualBusDevice())
             {
-                Encos_VirtualBusDevice *VDev = dynamic_cast<Encos_VirtualBusDevice *>(dev);
+                Encos_VirtualBusDevice* VDev = dynamic_cast<Encos_VirtualBusDevice*>(dev);
                 if (VDev == nullptr)
                 {
                     this->logger_->error("Unknown device type, check your configuration xml.");
@@ -128,7 +128,7 @@ namespace bitbot
             }
             else
             {
-                Encos_CANBusDevice *CanDev = dynamic_cast<Encos_CANBusDevice *>(dev);
+                Encos_CANBusDevice* CanDev = dynamic_cast<Encos_CANBusDevice*>(dev);
                 if (CanDev == nullptr)
                 {
                     this->logger_->error("Unknown device type, check your configuration xml.");
@@ -145,7 +145,7 @@ namespace bitbot
 
                     if (this->CAN_Device_By_CAN_ID.count(CAN_IDs[i]) == 0)
                     {
-                        this->CAN_Device_By_CAN_ID.insert({CAN_IDs[i], std::vector<Encos_CANBusDevice *>()});
+                        this->CAN_Device_By_CAN_ID.insert({ CAN_IDs[i], std::vector<Encos_CANBusDevice*>() });
                     }
                     this->CAN_Device_By_CAN_ID[CAN_IDs[i]].push_back(CanDev);
                 }
@@ -154,8 +154,8 @@ namespace bitbot
 
         for (size_t i = 0; i < CAN_Device_By_EtherCAT_ID.size(); i++)
         {
-            std::sort(this->CAN_Device_By_EtherCAT_ID[i].begin(), this->CAN_Device_By_EtherCAT_ID[i].end(), [](Encos_CANBusDevice *a, Encos_CANBusDevice *b)
-                      { return a->Id() < b->Id(); });
+            std::sort(this->CAN_Device_By_EtherCAT_ID[i].begin(), this->CAN_Device_By_EtherCAT_ID[i].end(), [](Encos_CANBusDevice* a, Encos_CANBusDevice* b)
+                { return a->Id() < b->Id(); });
 
             if (this->CAN_Device_By_EtherCAT_ID[i].size() > 6)
             {
@@ -167,7 +167,7 @@ namespace bitbot
 
     void EncosBus::WriteBus()
     {
-        for (auto &&dev : this->VirtualBusDevices)
+        for (auto&& dev : this->VirtualBusDevices)
         {
             dev->WriteOnce();
         }
@@ -186,7 +186,7 @@ namespace bitbot
 
     void EncosBus::ReadBus()
     {
-        for (auto &&dev : this->VirtualBusDevices)
+        for (auto&& dev : this->VirtualBusDevices)
         {
             dev->ReadOnce();
         }
@@ -195,7 +195,7 @@ namespace bitbot
 
         for (size_t i = 0; i < this->CAN_BusReadBuffer.size(); i++)
         {
-            this->CAN_BusReadBuffer[i] = (EtherCAT_Msg *)(ec_slave[i + 1].inputs);
+            this->CAN_BusReadBuffer[i] = (EtherCAT_Msg*)(ec_slave[i + 1].inputs);
             // std::cout<<static_cast<int>(this->CAN_BusReadBuffer[i]->device_number)<<std::endl;
             for (size_t j = 0; j < this->CAN_BusReadBuffer[i]->device_number; j++)
             {
@@ -216,7 +216,7 @@ namespace bitbot
         this->check_cnt++;
     }
 
-    bool EncosBus::InitEtherCAT(const std::string &ifname)
+    bool EncosBus::InitEtherCAT(const std::string& ifname)
     {
         int i;
         int oloop, iloop, chk;
@@ -309,7 +309,7 @@ namespace bitbot
                         {
                             char str[1024];
                             sprintf(str, "[EtherCAT Error] Slave %d State=0x%2.2x StatusCode=0x%4.4x : %s\n",
-                                    i, ec_slave[i].state, ec_slave[i].ALstatuscode, ec_ALstatuscode2string(ec_slave[i].ALstatuscode));
+                                i, ec_slave[i].state, ec_slave[i].ALstatuscode, ec_ALstatuscode2string(ec_slave[i].ALstatuscode));
                             std::string info(str);
                             this->logger_->debug(info);
                         }
@@ -328,6 +328,31 @@ namespace bitbot
             this->logger_->error("visit https://github.com/OpenEtherCATsociety/SOEM/issues/83 for more information.");
         }
         return false;
+    }
+
+    std::vector<Encos_CANBusDevice*> EncosBus::get_CAN_Devices()
+    {
+        std::vector<Encos_CANBusDevice*> can_devices;
+        for (auto dev : this->devices_)
+        {
+            if (dev->VirtualBusDevice())
+            {
+                continue;
+            }
+            Encos_CANBusDevice* CanDev = dynamic_cast<Encos_CANBusDevice*>(dev);
+            if (CanDev == nullptr)
+            {
+                this->logger_->error("Unknown device type, check your configuration xml.");
+                this->ErrorFlag.store(true);
+            }
+            can_devices.push_back(CanDev);
+        }
+        return can_devices;
+    }
+
+    std::vector<Encos_VirtualBusDevice*> EncosBus::get_VirtualBusDevices()
+    {
+        return this->VirtualBusDevices;
     }
 
     void EncosBus::EtherCATStateCheck()

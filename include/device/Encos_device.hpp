@@ -24,8 +24,7 @@ namespace bitbot
     {
         Encos_DEVICE = 1000,
         Encos_JOINT,
-        Yesense_IMU,
-        Xinxiangyang_BATTERY
+        Yesense_IMU
     };
 
     /**

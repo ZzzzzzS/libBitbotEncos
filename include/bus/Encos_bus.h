@@ -93,6 +93,21 @@ namespace bitbot
         /// @brief 是否发生错误
         std::atomic_bool ErrorFlag;
 
+        /**
+         * @brief 获取所有的CAN总线设备
+         *
+         * @return std::vector<Encos_CANBusDevice*> CAN总线设备列表
+         */
+        std::vector<Encos_CANBusDevice*> get_CAN_Devices();
+
+        /**
+         * @brief 获取所有的虚拟总线设备
+         *
+         * @return std::vector<Encos_VirtualBusDevice*> 虚拟总线设备列表
+         */
+        std::vector<Encos_VirtualBusDevice*> get_VirtualBusDevices();
+
+
     private:
         // bitbot bus variables
         std::vector<std::vector<Encos_CANBusDevice*>> CAN_Device_By_EtherCAT_ID; // for device write
