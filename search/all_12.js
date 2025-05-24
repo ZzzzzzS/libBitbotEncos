@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['_7eencos_5fcanbusdevice_0',['~Encos_CANBusDevice',['../classbitbot_1_1_encos___c_a_n_bus_device.html#aa712c7e1ead83c39393b9e1a34e5e4dd',1,'bitbot::Encos_CANBusDevice']]],
-  ['_7eencos_5fvirtualbusdevice_1',['~Encos_VirtualBusDevice',['../classbitbot_1_1_encos___virtual_bus_device.html#adb547ca1005110126cd0e5724ee0374d',1,'bitbot::Encos_VirtualBusDevice']]],
-  ['_7eencosbus_2',['~EncosBus',['../classbitbot_1_1_encos_bus.html#a2446a1f0abc8a0c2ec53b4534962abac',1,'bitbot::EncosBus']]],
-  ['_7eencosjoint_3',['~EncosJoint',['../classbitbot_1_1_encos_joint.html#a085fe012f13c75b13ff6c63d8f5c1ef8',1,'bitbot::EncosJoint']]],
-  ['_7eencoskernel_4',['~EncosKernel',['../classbitbot_1_1_encos_kernel.html#af7fa19b4498e5c2202c5cc5bfccc95c2',1,'bitbot::EncosKernel']]],
-  ['_7eyesenseimu_5',['~YesenseIMU',['../classbitbot_1_1_yesense_i_m_u.html#a0a10904162ba5f61f47c957125c757f2',1,'bitbot::YesenseIMU']]]
+  ['w_5fx_131',['w_x',['../structbitbot_1_1ImuRuntimeData.html#ac29d79e2b3aaf8b1fde4ff335cfaafa2',1,'bitbot::ImuRuntimeData']]],
+  ['w_5fy_132',['w_y',['../structbitbot_1_1ImuRuntimeData.html#a2d15d8eccea7ebbe20812559a178d69b',1,'bitbot::ImuRuntimeData']]],
+  ['w_5fz_133',['w_z',['../structbitbot_1_1ImuRuntimeData.html#a70fce163c98d624dcde780d07104c63a',1,'bitbot::ImuRuntimeData']]],
+  ['waiting_134',['Waiting',['../classbitbot_1_1JointAutoZero.html#a61997dcb6278a0068b7029a697ed6c53a5706de961fb376d701be6e7762d8b09c',1,'bitbot::JointAutoZero']]],
+  ['writebus_135',['WriteBus',['../classbitbot_1_1EncosBus.html#a79c85602d58406e43c021adbeefd7dbb',1,'bitbot::EncosBus::WriteBus()'],['../classbitbot_1_1Encos__CANBusDevice.html#ab4cba04a7d9317437573abda07096932',1,'bitbot::Encos_CANBusDevice::WriteBus()']]],
+  ['writeonce_136',['WriteOnce',['../classbitbot_1_1Encos__VirtualBusDevice.html#a97599cc9bfd9a342f5c47ae913664208',1,'bitbot::Encos_VirtualBusDevice']]]
 ];

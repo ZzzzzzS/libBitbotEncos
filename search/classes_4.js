@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['yesenseimu_0',['YesenseIMU',['../classbitbot_1_1_yesense_i_m_u.html',1,'bitbot']]]
+  ['motorconigurationdata_157',['MotorConigurationData',['../structbitbot_1_1MotorConigurationData.html',1,'bitbot']]],
+  ['motorruntimedata_158',['MotorRuntimeData',['../structbitbot_1_1MotorRuntimeData.html',1,'bitbot']]]
 ];

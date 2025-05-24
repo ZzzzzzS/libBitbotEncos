@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['motor_5fdirection_0',['MOTOR_DIRECTION',['../structbitbot_1_1_motor_coniguration_data.html#a824a103f126e3b8e42e3a6ff666d3d6e',1,'bitbot::MotorConigurationData']]],
-  ['motorconigurationdata_1',['MotorConigurationData',['../structbitbot_1_1_motor_coniguration_data.html',1,'bitbot::MotorConigurationData'],['../structbitbot_1_1_motor_coniguration_data.html#a6644076e7b644cda22e6f18a21c9a1c3',1,'bitbot::MotorConigurationData::MotorConigurationData()']]],
-  ['motorruntimedata_2',['MotorRuntimeData',['../structbitbot_1_1_motor_runtime_data.html',1,'bitbot']]],
-  ['motortemperature_3',['MotorTemperature',['../structbitbot_1_1_motor_runtime_data.html#a556e4a8a05630cdc1982302eccef2549',1,'bitbot::MotorRuntimeData']]]
+  ['joint_5fautozero_2ehpp_75',['Joint_AutoZero.hpp',['../Joint__AutoZero_8hpp.html',1,'']]],
+  ['jointautozero_76',['JointAutoZero',['../classbitbot_1_1JointAutoZero.html',1,'bitbot::JointAutoZero'],['../classbitbot_1_1JointAutoZero.html#af14c260bd8a097415f93da108dc9680c',1,'bitbot::JointAutoZero::JointAutoZero()']]],
+  ['jointresetstates_77',['JointResetStates',['../classbitbot_1_1JointAutoZero.html#a61997dcb6278a0068b7029a697ed6c53',1,'bitbot::JointAutoZero']]]
 ];

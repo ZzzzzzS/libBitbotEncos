@@ -1,4 +1,21 @@
 var searchData=
 [
-  ['updateruntimedata_0',['UpdateRuntimeData',['../classbitbot_1_1_encos_device.html#a510c5e0f8ee795b5fd64a41838b94989',1,'bitbot::EncosDevice']]]
+  ['setmode_105',['SetMode',['../classbitbot_1_1EncosJoint.html#a867c70fd7513175530a506af9ddce9a6',1,'bitbot::EncosJoint']]],
+  ['setmotionkd_106',['SetMotionKd',['../classbitbot_1_1EncosJoint.html#ac6f7c72994ab2e02e3ef887b08160a48',1,'bitbot::EncosJoint']]],
+  ['setmotionkp_107',['SetMotionKp',['../classbitbot_1_1EncosJoint.html#a62dcfc46f03f9c188a0cf58fbaf202db',1,'bitbot::EncosJoint']]],
+  ['settargetcurrent_108',['SetTargetCurrent',['../classbitbot_1_1EncosJoint.html#a35c6caa33bb1eedf22a9c7bfea68f7d8',1,'bitbot::EncosJoint']]],
+  ['settargetmotion_109',['SetTargetMotion',['../classbitbot_1_1EncosJoint.html#ae21897aef658a640dcc9d4b7e8066fdc',1,'bitbot::EncosJoint']]],
+  ['settargetposition_110',['SetTargetPosition',['../classbitbot_1_1EncosJoint.html#af2c592513f3c71dc8a11ec30f26abcd2',1,'bitbot::EncosJoint']]],
+  ['settargettorque_111',['SetTargetTorque',['../classbitbot_1_1EncosJoint.html#ac51e5d8430ef625b17792f69728eded2',1,'bitbot::EncosJoint']]],
+  ['settargetvelocity_112',['SetTargetVelocity',['../classbitbot_1_1EncosJoint.html#ad61d01ab4650b11619f0e2652f1263f5',1,'bitbot::EncosJoint']]],
+  ['settings_5ffb_5fkd_113',['Settings_FB_KD',['../structbitbot_1_1MotorRuntimeData.html#a912fd9a6ed2925ec41c939cdcb81f8e9',1,'bitbot::MotorRuntimeData']]],
+  ['settings_5ffb_5fkp_114',['Settings_FB_KP',['../structbitbot_1_1MotorRuntimeData.html#aceaddef21839cb4d01397340179d294c',1,'bitbot::MotorRuntimeData']]],
+  ['settingsacc_115',['SettingsAcc',['../structbitbot_1_1MotorRuntimeData.html#aa9d17242ae59808cecc9a1ddcca39db7',1,'bitbot::MotorRuntimeData']]],
+  ['settingsdisturbcomp_116',['SettingsDisturbComp',['../structbitbot_1_1MotorRuntimeData.html#a9f6665f1f98e7ed1ce5f485729119b35',1,'bitbot::MotorRuntimeData']]],
+  ['settingsmaglinkgain_117',['SettingsMagLinkGain',['../structbitbot_1_1MotorRuntimeData.html#a7eb44a557db9415e4868afce2a4fd8a0',1,'bitbot::MotorRuntimeData']]],
+  ['spd_5fmax_118',['SPD_MAX',['../structbitbot_1_1MotorConigurationData.html#a190e3f6dfbd099b8408a5a0d5c536a05',1,'bitbot::MotorConigurationData']]],
+  ['spd_5fmin_119',['SPD_MIN',['../structbitbot_1_1MotorConigurationData.html#a80adf4848533a37bf6e583763792549c',1,'bitbot::MotorConigurationData']]],
+  ['startreset_120',['StartReset',['../classbitbot_1_1JointAutoZero.html#a3f4aa1619bf35951e695f9acad53c711',1,'bitbot::JointAutoZero']]],
+  ['stopped_121',['Stopped',['../classbitbot_1_1JointAutoZero.html#a61997dcb6278a0068b7029a697ed6c53ac23e2b09ebe6bf4cb5e2a9abe85c0be2',1,'bitbot::JointAutoZero']]],
+  ['stopreset_122',['StopReset',['../classbitbot_1_1JointAutoZero.html#a36c3d706721714ce96a8558d3fe9dbab',1,'bitbot::JointAutoZero']]]
 ];

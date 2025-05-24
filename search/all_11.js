@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['yaw_0',['yaw',['../structbitbot_1_1_imu_runtime_data.html#a717c08a32615bc555eee0c14e03c0271',1,'bitbot::ImuRuntimeData']]],
-  ['yesense_5fimu_2eh_1',['yesense_imu.h',['../yesense__imu_8h.html',1,'']]],
-  ['yesenseimu_2',['YesenseIMU',['../classbitbot_1_1_yesense_i_m_u.html',1,'bitbot::YesenseIMU'],['../classbitbot_1_1_yesense_i_m_u.html#a47979d38ede90a9b5cb8babec334c8ad',1,'bitbot::YesenseIMU::YesenseIMU()']]]
+  ['virtualbusdevice_130',['VirtualBusDevice',['../classbitbot_1_1EncosDevice.html#ad942b3215fcafe0c0ec916e098cd001f',1,'bitbot::EncosDevice::VirtualBusDevice()'],['../classbitbot_1_1Encos__CANBusDevice.html#ab22eba0f4f20ac3dd3cf5ad875d4a117',1,'bitbot::Encos_CANBusDevice::VirtualBusDevice()'],['../classbitbot_1_1Encos__VirtualBusDevice.html#af2a6c0fe88b708ca3762576c1efc7dda',1,'bitbot::Encos_VirtualBusDevice::VirtualBusDevice()']]]
 ];

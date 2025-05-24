@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['motorconigurationdata_0',['MotorConigurationData',['../structbitbot_1_1_motor_coniguration_data.html#a6644076e7b644cda22e6f18a21c9a1c3',1,'bitbot::MotorConigurationData']]]
+  ['jointautozero_206',['JointAutoZero',['../classbitbot_1_1JointAutoZero.html#af14c260bd8a097415f93da108dc9680c',1,'bitbot::JointAutoZero']]]
 ];

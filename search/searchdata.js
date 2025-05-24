@@ -1,12 +1,13 @@
 var indexSectionsWithContent =
 {
-  0: "abcdeghikmprstuvwy~位免力接电硬致软运速配驱",
-  1: "ceimy",
-  2: "ey",
-  3: "deghimprsuvwy~",
+  0: "abcdefghijkmprstuvwy~",
+  1: "ceijmy",
+  2: "ejy",
+  3: "deghijmprsuvwy~",
   4: "acdeikmprstwy",
-  5: "e",
-  6: "be驱"
+  5: "ej",
+  6: "afrsw",
+  7: "be"
 };
 
 var indexSectionNames =
@@ -17,7 +18,8 @@ var indexSectionNames =
   3: "functions",
   4: "variables",
   5: "enums",
-  6: "pages"
+  6: "enumvalues",
+  7: "pages"
 };
 
 var indexSectionLabels =
@@ -28,6 +30,7 @@ var indexSectionLabels =
   3: "函数",
   4: "变量",
   5: "枚举",
-  6: "页"
+  6: "枚举值",
+  7: "页"
 };
 

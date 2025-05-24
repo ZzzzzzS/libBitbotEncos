@@ -1,10 +1,7 @@
 var searchData=
 [
-  ['readbus_0',['ReadBus',['../classbitbot_1_1_encos_bus.html#a66f66d51653118584435c1a881c5e519',1,'bitbot::EncosBus::ReadBus()'],['../classbitbot_1_1_encos___c_a_n_bus_device.html#abfd5cf81c781feda1ae94457b2515c35',1,'bitbot::Encos_CANBusDevice::ReadBus()']]],
-  ['readonce_1',['ReadOnce',['../classbitbot_1_1_encos___virtual_bus_device.html#a1f75f87e2fb404aefa9bd50975ee712a',1,'bitbot::Encos_VirtualBusDevice']]],
-  ['registerdevices_2',['RegisterDevices',['../classbitbot_1_1_encos_bus.html#af2699383ca1e313975a280f5edc8665b',1,'bitbot::EncosBus']]],
-  ['resetmotorposition_3',['ResetMotorPosition',['../classbitbot_1_1_encos_joint.html#a4533df7f1277743bcb4e267b08883a07',1,'bitbot::EncosJoint']]],
-  ['roll_4',['roll',['../structbitbot_1_1_imu_runtime_data.html#a441e4ca1f13fcff8363368fa36ac55e3',1,'bitbot::ImuRuntimeData']]],
-  ['rtr_5',['rtr',['../struct_c_a_n___device___msg.html#a60db297b945be2a1d96d46c6191c9ee8',1,'CAN_Device_Msg']]],
-  ['runtime_6',['runtime',['../structbitbot_1_1_imu_data.html#a6ddc803c7e2549c94220f82eb8f4904d',1,'bitbot::ImuData']]]
+  ['motor_5fdirection_85',['MOTOR_DIRECTION',['../structbitbot_1_1MotorConigurationData.html#a824a103f126e3b8e42e3a6ff666d3d6e',1,'bitbot::MotorConigurationData']]],
+  ['motorconigurationdata_86',['MotorConigurationData',['../structbitbot_1_1MotorConigurationData.html',1,'bitbot::MotorConigurationData'],['../structbitbot_1_1MotorConigurationData.html#aa72fb34353a14a676c674b7e836c4f1f',1,'bitbot::MotorConigurationData::MotorConigurationData()']]],
+  ['motorruntimedata_87',['MotorRuntimeData',['../structbitbot_1_1MotorRuntimeData.html',1,'bitbot']]],
+  ['motortemperature_88',['MotorTemperature',['../structbitbot_1_1MotorRuntimeData.html#a556e4a8a05630cdc1982302eccef2549',1,'bitbot::MotorRuntimeData']]]
 ];

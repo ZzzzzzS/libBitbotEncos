@@ -1,9 +1,13 @@
 var searchData=
 [
-  ['kd_0',['Kd',['../structbitbot_1_1_motor_runtime_data.html#ac4369a579aa9fe3ecbf8536f22a1927b',1,'bitbot::MotorRuntimeData']]],
-  ['kd_5fmax_1',['KD_MAX',['../structbitbot_1_1_motor_coniguration_data.html#ac32c833e3dc00a130ecb32b5b25ac820',1,'bitbot::MotorConigurationData']]],
-  ['kd_5fmin_2',['KD_MIN',['../structbitbot_1_1_motor_coniguration_data.html#ae873fc31a7002f4d6cbb6c58e985285a',1,'bitbot::MotorConigurationData']]],
-  ['kp_3',['Kp',['../structbitbot_1_1_motor_runtime_data.html#a74b44bf8b3db093c7322e60dba091bbc',1,'bitbot::MotorRuntimeData']]],
-  ['kp_5fmax_4',['KP_MAX',['../structbitbot_1_1_motor_coniguration_data.html#a6d4fab1e44455808535945b7e40ccf19',1,'bitbot::MotorConigurationData']]],
-  ['kp_5fmin_5',['KP_MIN',['../structbitbot_1_1_motor_coniguration_data.html#a2a101b0195ca79716e28f7d55847104c',1,'bitbot::MotorConigurationData']]]
+  ['i_5fmax_65',['I_MAX',['../structbitbot_1_1MotorConigurationData.html#adde62e4ff29689584dacc52d295d3acc',1,'bitbot::MotorConigurationData']]],
+  ['i_5fmin_66',['I_MIN',['../structbitbot_1_1MotorConigurationData.html#a0e1cb5f116674672a3e29cdd8e399132',1,'bitbot::MotorConigurationData']]],
+  ['id_67',['id',['../structCAN__Device__Msg.html#a520e8e67923f8827e92dfc84a24e7f06',1,'CAN_Device_Msg']]],
+  ['imu_5ftemp_68',['IMU_temp',['../structbitbot_1_1ImuRuntimeData.html#a007c7e4e5023358e92efb6db50be0311',1,'bitbot::ImuRuntimeData']]],
+  ['imudata_69',['ImuData',['../structbitbot_1_1ImuData.html',1,'bitbot']]],
+  ['imuruntimedata_70',['ImuRuntimeData',['../structbitbot_1_1ImuRuntimeData.html',1,'bitbot']]],
+  ['init_71',['Init',['../classbitbot_1_1EncosBus.html#a61665f32cc6fcef56d237fa24f763556',1,'bitbot::EncosBus']]],
+  ['initethercat_72',['InitEtherCAT',['../classbitbot_1_1EncosBus.html#a5ca17937a489b929b5e867c5537eba90',1,'bitbot::EncosBus']]],
+  ['isenable_73',['isEnable',['../classbitbot_1_1EncosJoint.html#a61bfd78c10299d9c90e659cd9f7d91b3',1,'bitbot::EncosJoint']]],
+  ['ispoweron_74',['isPowerOn',['../classbitbot_1_1EncosJoint.html#adbb110295778be132004783f1f1ff963',1,'bitbot::EncosJoint']]]
 ];

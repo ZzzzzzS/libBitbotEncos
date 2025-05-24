@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['writebus_0',['WriteBus',['../classbitbot_1_1_encos_bus.html#a79c85602d58406e43c021adbeefd7dbb',1,'bitbot::EncosBus::WriteBus()'],['../classbitbot_1_1_encos___c_a_n_bus_device.html#ab4cba04a7d9317437573abda07096932',1,'bitbot::Encos_CANBusDevice::WriteBus()']]],
-  ['writeonce_1',['WriteOnce',['../classbitbot_1_1_encos___virtual_bus_device.html#a97599cc9bfd9a342f5c47ae913664208',1,'bitbot::Encos_VirtualBusDevice']]]
+  ['virtualbusdevice_228',['VirtualBusDevice',['../classbitbot_1_1EncosDevice.html#ad942b3215fcafe0c0ec916e098cd001f',1,'bitbot::EncosDevice::VirtualBusDevice()'],['../classbitbot_1_1Encos__CANBusDevice.html#ab22eba0f4f20ac3dd3cf5ad875d4a117',1,'bitbot::Encos_CANBusDevice::VirtualBusDevice()'],['../classbitbot_1_1Encos__VirtualBusDevice.html#af2a6c0fe88b708ca3762576c1efc7dda',1,'bitbot::Encos_VirtualBusDevice::VirtualBusDevice()']]]
 ];

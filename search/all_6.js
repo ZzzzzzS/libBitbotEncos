@@ -1,4 +1,29 @@
 var searchData=
 [
-  ['haspowercfg_0',['HasPowerCfg',['../classbitbot_1_1_encos_device.html#ae4adffc3b7ddc7a358173b51fbbb7823',1,'bitbot::EncosDevice']]]
+  ['get_5fcan_5fdevices_38',['get_CAN_Devices',['../classbitbot_1_1EncosBus.html#a87501c6b2a51417fd585df4fc0cc09bc',1,'bitbot::EncosBus']]],
+  ['get_5fcan_5fids_39',['get_CAN_IDs',['../classbitbot_1_1Encos__CANBusDevice.html#a9bdce4c4c6bbe1c0227481c0b8fedf6b',1,'bitbot::Encos_CANBusDevice']]],
+  ['get_5fethercat_5fslave_5fid_40',['get_EtherCAT_Slave_ID',['../classbitbot_1_1Encos__CANBusDevice.html#ad4c0f28e4d39a6bb7188f20b3154021d',1,'bitbot::Encos_CANBusDevice']]],
+  ['get_5fvirtualbusdevices_41',['get_VirtualBusDevices',['../classbitbot_1_1EncosBus.html#a61e3c935c69f93442be2a9b60b63dcb0',1,'bitbot::EncosBus']]],
+  ['getaccx_42',['GetAccX',['../classbitbot_1_1YesenseIMU.html#abad4761eb60b523dba966cb593f81d03',1,'bitbot::YesenseIMU']]],
+  ['getaccy_43',['GetAccY',['../classbitbot_1_1YesenseIMU.html#adccb95092354ef208eb97173255314a1',1,'bitbot::YesenseIMU']]],
+  ['getaccz_44',['GetAccZ',['../classbitbot_1_1YesenseIMU.html#a1684efd1873ee0ec04692f172e3dc6ac',1,'bitbot::YesenseIMU']]],
+  ['getactualcurrent_45',['GetActualCurrent',['../classbitbot_1_1EncosJoint.html#af27d77872e3ed64661c1a4a65b4c0ed2',1,'bitbot::EncosJoint']]],
+  ['getactualposition_46',['GetActualPosition',['../classbitbot_1_1EncosJoint.html#ae4c69387fe9f14b6ce925012ead6741c',1,'bitbot::EncosJoint']]],
+  ['getactualtorque_47',['GetActualTorque',['../classbitbot_1_1EncosJoint.html#a735b826f20207f5b08391a27586fcd15',1,'bitbot::EncosJoint']]],
+  ['getactualvelocity_48',['GetActualVelocity',['../classbitbot_1_1EncosJoint.html#a6bea6e15d230713cbfce269516f70caf',1,'bitbot::EncosJoint']]],
+  ['getgyrox_49',['GetGyroX',['../classbitbot_1_1YesenseIMU.html#a26559b2e745385d8026be4af9a3db7dd',1,'bitbot::YesenseIMU']]],
+  ['getgyroy_50',['GetGyroY',['../classbitbot_1_1YesenseIMU.html#a1ba75925cbe411f914ee6a8bf09c98c2',1,'bitbot::YesenseIMU']]],
+  ['getgyroz_51',['GetGyroZ',['../classbitbot_1_1YesenseIMU.html#a31a27cc97a05c145b22c3de52dd056e3',1,'bitbot::YesenseIMU']]],
+  ['getimutemperature_52',['GetIMUTemperature',['../classbitbot_1_1YesenseIMU.html#a6e4ae13b8142a84fe380bcf975bc1ceb',1,'bitbot::YesenseIMU']]],
+  ['getmode_53',['GetMode',['../classbitbot_1_1EncosJoint.html#aaa212f394630431042151e0a05dd61ea',1,'bitbot::EncosJoint']]],
+  ['getmotionkd_54',['GetMotionKd',['../classbitbot_1_1EncosJoint.html#a22b714877ecc3e5440f9350b3ae6bcfb',1,'bitbot::EncosJoint']]],
+  ['getmotionkp_55',['GetMotionKp',['../classbitbot_1_1EncosJoint.html#ac3995e4e9f803640c0bce2d348190865',1,'bitbot::EncosJoint']]],
+  ['getmotortemperature_56',['GetMotorTemperature',['../classbitbot_1_1EncosJoint.html#a15b762e4111ff1ab8d655ca3b87d7d1f',1,'bitbot::EncosJoint']]],
+  ['getpitch_57',['GetPitch',['../classbitbot_1_1YesenseIMU.html#a2ed3bea56d79d99edcb69c2bbbffc471',1,'bitbot::YesenseIMU']]],
+  ['getroll_58',['GetRoll',['../classbitbot_1_1YesenseIMU.html#a4bd1cca770edd0a9058c3fb8c6bb1727',1,'bitbot::YesenseIMU']]],
+  ['gettargetcurrent_59',['GetTargetCurrent',['../classbitbot_1_1EncosJoint.html#aaf6102efcecbbe2bd877479b93835e51',1,'bitbot::EncosJoint']]],
+  ['gettargetposition_60',['GetTargetPosition',['../classbitbot_1_1EncosJoint.html#aad33414753e2417f75b2349dc9e4bc21',1,'bitbot::EncosJoint']]],
+  ['gettargettorque_61',['GetTargetTorque',['../classbitbot_1_1EncosJoint.html#acf6a4b139d3f77eccea6878cbcbdc313',1,'bitbot::EncosJoint']]],
+  ['gettargetvelocity_62',['GetTargetVelocity',['../classbitbot_1_1EncosJoint.html#adcefc75f9a89da06e9ab080ff0bf2132',1,'bitbot::EncosJoint']]],
+  ['getyaw_63',['GetYaw',['../classbitbot_1_1YesenseIMU.html#abbe71cd88c44d95b6636ccd22b338856',1,'bitbot::YesenseIMU']]]
 ];
