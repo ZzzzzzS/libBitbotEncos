@@ -12,6 +12,7 @@
 #include "string"
 #include "iostream"
 #include "Joint_AutoZero.hpp"
+#include "optional"
 
 namespace bitbot
 {
@@ -47,6 +48,7 @@ namespace bitbot
          * 关于该编程模型的详细信息请参阅https://bitbot.lmy.name/docs/bitbot-programming
          * @param config_file 配置文件路径，关于配置文件的信息请参阅配置文件章节。//TODO: add hyperlink to config file
          */
+
         EncosKernel(std::string config_file)
             : KernelTpl<EncosKernel<UserData>, EncosBus, UserData>(config_file)
         {
@@ -110,13 +112,15 @@ namespace bitbot
                     joints.push_back(joint);
                 }
             }
-            this->joint_auto_zero__ = new JointAutoZero(EncosKernel_node.child("reset"), static_cast<double>(1.0 / static_cast<double>(bus_freq)), this->logger_, joints);
+
+#ifdef FUNCTION_AUTO_ZERO
+            this->joint_auto_zero__ = new JointAutoZero(EncosKernel_node.child("zero"), static_cast<double>(1.0 / static_cast<double>(bus_freq)), this->logger_, joints);
             this->KernelRegisterEvent("start_reset_zero", static_cast<EventId>(EncosKernelEvent::START_RESET_ZERO), [this](EventValue e, UserData& d) {
                 bool ok = this->joint_auto_zero__->StartReset(this->kernel_runtime_data_.periods_count);
                 if (ok)
                 {
                     this->logger_->info("JointAutoZero: start reset zero");
-                    return static_cast<StateId>(EncosKernelState::AUTO_ZEROING);
+                    return std::optional<StateId>(static_cast<StateId>(EncosKernelState::AUTO_ZEROING));
                 }
                 else
                 {
@@ -131,7 +135,7 @@ namespace bitbot
                 if (ok)
                 {
                     this->logger_->info("JointAutoZero: stop reset zero");
-                    return static_cast<StateId>(KernelState::IDLE);
+                    return std::optional<StateId>(static_cast<StateId>(KernelState::IDLE));
                 }
                 else
                 {
@@ -147,7 +151,7 @@ namespace bitbot
                     this->joint_auto_zero__->StartReset(this->kernel_runtime_data_.periods_count);
                 },
                 { static_cast<EventId>(EncosKernelEvent::START_RESET_ZERO), static_cast<EventId>(EncosKernelEvent::STOP_RESET_ZERO) });
-
+#endif
             this->PrintWelcomeMessage(); // MUST PRIENT WELCOME MESSAGE!!!!!!
         }
 
@@ -157,7 +161,8 @@ namespace bitbot
          */
         ~EncosKernel()
         {
-            delete this->joint_auto_zero__;
+            if (this->joint_auto_zero__ != nullptr)
+                delete this->joint_auto_zero__;
             std::cout << "\033[32mGood bye from Bitbot Encos. Make Bitbot Everywhere! \033[0m" << std::endl;
         }
 

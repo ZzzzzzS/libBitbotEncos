@@ -1,3 +1,12 @@
+/**
+ * @file Joint_AutoZero.hpp
+ * @author zishun zhou (zhouzishun@mail.zzshub.cn)
+ * @brief JointAutoZero类用于自动归零电机位置
+ * @details JointAutoZero类用于自动归零电机位置，支持多个电机组的归零操作。用户可以通过配置文件指定每个电机的归零参数。
+ *
+ * @copyright Copyright (c) 2025
+ *
+ */
 #pragma once
 #include "bus/Encos_bus.h"
 #include "device/Encos_joint.h"
@@ -8,31 +17,50 @@ namespace bitbot
     class JointAutoZero
     {
     public:
+        /**
+         * @brief JointResetStates枚举类
+         *
+         */
         enum class JointResetStates
         {
+            /// @brief 等待状态
             Waiting,
+
+            /// @brief 应用力矩状态
             ApplyingTorque,
+
+            /// @brief 归零状态
             Resetting,
+
+            /// @brief 归零完成状态
             Finished,
+
+            /// @brief 停止状态
             Stopped
         };
 
     public:
+        /**
+         * @brief JointAutoZero构造函数
+         *
+         * @param reset_node xml节点，包含归零配置
+         * @param period 内核运行周期时间
+         * @param logger 日志记录器指针
+         * @param joints 电机列表，包含所有的电机
+         */
         JointAutoZero(const pugi::xml_node& reset_node, double period, SpdLoggerSharedPtr logger, std::vector<EncosJoint*>& joints)
         {
             this->logger__ = logger;
-            this->joints__ = joints;
-
             this->current_state__ = JointResetStates::Waiting;
 
-            pugi::xml_node reset_group_node = reset_node.child("reset_group");
+            pugi::xml_node reset_group_node = reset_node.child("zero_group");
             while (reset_group_node != nullptr)
             {
                 pugi::xml_node resetter_node = reset_group_node.child("resetter");
-                joint_groups__.push_back(std::vector<EncosJoint*>());
-                joint_ranges__.push_back(std::vector<std::pair<float, float>>());
-                reset_torque__.push_back(std::vector<float>());
-                reset_velocities__.push_back(std::vector<float>());
+                joint_groups__.emplace_back(std::vector<EncosJoint*>());
+                joint_ranges__.emplace_back(std::vector<std::pair<float, float>>());
+                reset_torque__.emplace_back(std::vector<float>());
+                reset_velocities__.emplace_back(std::vector<float>());
 
                 double reset_period;
                 ConfigParser::ParseAttribute2d(reset_period, reset_group_node.attribute("reset_period"));
@@ -47,12 +75,14 @@ namespace bitbot
                     ConfigParser::ParseAttribute2d(joint_upper_limit, resetter_node.attribute("joint_upper_limit"));
                     ConfigParser::ParseAttribute2d(joint_reset_torque, resetter_node.attribute("joint_reset_torque"));
                     ConfigParser::ParseAttribute2d(joint_reset_velocity, resetter_node.attribute("joint_reset_velocity"));
-                    EncosJoint* joint = GetJointById(joint_name);
+                    EncosJoint* joint = GetJointById(joint_name, joints);
+
                     if (joint == nullptr)
                     {
                         this->logger__->error("JointAutoZero: joint {} not found", joint_name);
                         throw std::runtime_error("JointAutoZero: joint not found");
                     }
+                    joints__.emplace_back(joint);
 
                     joint_groups__.back().emplace_back(joint);
                     joint_ranges__.back().emplace_back(std::make_pair(joint_lower_limit, joint_upper_limit));
@@ -61,10 +91,17 @@ namespace bitbot
 
                     resetter_node = resetter_node.next_sibling("resetter");
                 }
-                reset_group_node = reset_group_node.next_sibling("resetter");
+                reset_group_node = reset_group_node.next_sibling("zero_group");
             }
         }
 
+        /**
+         * @brief 开始归零操作
+         *
+         * @param period_count 归零操作的周期计数
+         * @return true 开始归零操作成功
+         * @return false 开始归零操作失败，可能是当前状态不允许开始归零
+         */
         bool StartReset(uint64_t period_count)
         {
             if (current_state__ == JointResetStates::Waiting || current_state__ == JointResetStates::Stopped)
@@ -86,6 +123,12 @@ namespace bitbot
             }
         }
 
+        /**
+         * @brief 停止归零操作
+         *
+         * @return true 归零操作停止成功
+         * @return false 归零操作停止失败，可能是当前状态不允许停止归零
+         */
         bool StopReset()
         {
             if (current_state__ == JointResetStates::Waiting || this->current_state__ == JointResetStates::Finished)
@@ -111,6 +154,11 @@ namespace bitbot
             }
         }
 
+        /**
+         * @brief 重置状态
+         *
+         * @param period_count 归零操作的周期计数
+         */
         void ResetState(uint64_t period_count)
         {
             switch (current_state__)
@@ -234,9 +282,9 @@ namespace bitbot
             }
         }
 
-        EncosJoint* GetJointById(std::string name)
+        EncosJoint* GetJointById(std::string name, const std::vector<EncosJoint*>& joints)
         {
-            for (auto joint : joints__)
+            for (auto joint : joints)
             {
                 if (joint->Name() == name)
                 {

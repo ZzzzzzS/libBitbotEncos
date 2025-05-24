@@ -39,6 +39,11 @@ add_custom_command(TARGET main_app POST_BUILD COMMAND sudo setcap cap_net_admin,
 
 Encos电机支持位置控制，速度控制，力矩/电流控制，和运动模式4种控制模式。关于电机控制的详细说明请参阅[Encos电机模式简介](./doc/BitbotEncosMotorMotion.md)。关于的电机相关API请参阅@ref bitbot::EncosJoint "EncosJoint"。
 
+# 自动零点校准
+
+Bitbot Encos在具有机械限位的关节上具备自动零点校准的功能。可在CMAKE中设置``FUNCTION_AUTO_ZERO``为``ON``来启用该功能。使用该功能还需要在配置文件中设置关节机械限位范围等参数，可参阅[Bitbot Encos的配置文件](./doc/BitbotEncosConfig.md)章节。
+**请注意，请勿在没有机械限位的关节上使用该功能以免损坏电机！**
+
 # API
 
 * Bitbot内核接口: <https://bitbot.lmy.name/docs/bitbot-programming>

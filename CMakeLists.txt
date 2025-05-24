@@ -27,6 +27,13 @@ if(BUILD_SIMULATION)
     set(BitbotEncos_LIBS BitbotMujoco PARENT_SCOPE)
 else()
     set(BitbotEncosDefinitions "" PARENT_SCOPE)
+    option(FUNCTION_AUTO_ZERO "Enable auto zero function" OFF)
+    if(FUNCTION_AUTO_ZERO)
+        message("Auto zero function is enabled.")
+        set(BitbotEncosDefinitions "-DFUNCTION_AUTO_ZERO" PARENT_SCOPE)
+    endif()
+
+    
     BitbotAddDependency(
         NAME bitbot_kernel
         FILE_NAME "bitbot_kernel-main.zip"
