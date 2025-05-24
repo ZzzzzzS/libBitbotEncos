@@ -62,7 +62,8 @@ else()
         BitbotKernel
         soem
     )
-
+    target_compile_options(BitbotEncos PUBLIC)
+    target_compile_features(BitbotEncos PUBLIC cxx_std_20)
     set(BitbotEncos_LIBS BitbotEncos BitbotKernel PARENT_SCOPE)
 endif()
 
