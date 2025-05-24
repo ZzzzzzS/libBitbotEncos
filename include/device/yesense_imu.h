@@ -186,7 +186,7 @@ namespace bitbot
         int pos = 0;
         speed_t speed = B921600;
 
-        constexpr float r2d = 180.0f / M_PI;
-        constexpr float d2r = M_PI / 180.0f;
+        constexpr static float r2d = 180.0f / M_PI;
+        constexpr static float d2r = M_PI / 180.0f;
     };
 }

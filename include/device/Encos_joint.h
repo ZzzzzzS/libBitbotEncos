@@ -133,6 +133,9 @@ namespace bitbot
         /// @brief 电机的转动方向，1表示正转，-1表示反转
         const int MOTOR_DIRECTION;
 
+        /// @brief 电机的电流力矩常数，单位为Nm/A
+        const float KT;
+
         /**
          * @brief 配置电机的参数
          *
@@ -146,7 +149,7 @@ namespace bitbot
          */
         MotorConigurationData(int motor_direction, float kp_range,
             float kd_range, float vel_range,
-            float pos_range, float torque_range, float current_range)
+            float pos_range, float torque_range, float current_range, float KT)
             : KP_MAX(kp_range),
             KP_MIN(0.0),
             KD_MAX(kd_range),
@@ -159,7 +162,8 @@ namespace bitbot
             T_MAX(torque_range),
             I_MAX(current_range),
             I_MIN(-current_range),
-            MOTOR_DIRECTION(motor_direction)
+            MOTOR_DIRECTION(motor_direction),
+            KT(KT)
         {
         }
     };
@@ -254,6 +258,13 @@ namespace bitbot
          * @return float 电机的实际电流，单位为安培(A)
          */
         float GetActualCurrent();
+
+        /**
+         * @brief 获取电机的实际力矩
+         *
+         * @return float 电机的实际力矩，单位为牛米(Nm)
+         */
+        float GetActualTorque();
 
         /**
          * @brief 获取电机运动模式下的位置环比例系数

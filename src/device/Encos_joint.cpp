@@ -64,7 +64,7 @@ namespace bitbot
         this->Slave_ID__ = static_cast<decltype(this->Slave_ID__)>(id);
 
         int MotorDirection;
-        double kp_range, kd_range, vel_range, pos_range, torque_range, current_range;
+        double kp_range, kd_range, vel_range, pos_range, torque_range, current_range, KT;
         ConfigParser::ParseAttribute2i(MotorDirection, joint_node.attribute("motor_direction"));
         MotorDirection /= std::abs(MotorDirection);
         ConfigParser::ParseAttribute2d(kp_range, joint_node.attribute("kp_range"));
@@ -73,6 +73,7 @@ namespace bitbot
         ConfigParser::ParseAttribute2d(pos_range, joint_node.attribute("pos_range"));
         ConfigParser::ParseAttribute2d(torque_range, joint_node.attribute("torque_range"));
         ConfigParser::ParseAttribute2d(current_range, joint_node.attribute("current_range"));
+        ConfigParser::ParseAttribute2d(KT, joint_node.attribute("torque_constant"));
 
         this->ConfigData__ = new MotorConigurationData(static_cast<float>(MotorDirection),
             static_cast<float>(kp_range),
@@ -80,7 +81,9 @@ namespace bitbot
             static_cast<float>(vel_range),
             static_cast<float>(pos_range),
             static_cast<float>(torque_range),
-            static_cast<float>(current_range));
+            static_cast<float>(current_range),
+            static_cast<float>(KT)
+        );
         this->RuntimeData__.CurrentLimit.store(current_range);
 
         double kp, kd;
@@ -141,6 +144,11 @@ namespace bitbot
     float EncosJoint::GetActualCurrent()
     {
         return this->RuntimeData__.CurrentCurrent.load();
+    }
+
+    float EncosJoint::GetActualTorque()
+    {
+        return this->RuntimeData__.CurrentCurrent.load() * this->ConfigData__->KT;
     }
 
     float EncosJoint::GetTargetPosition()
