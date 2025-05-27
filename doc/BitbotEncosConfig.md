@@ -15,17 +15,13 @@ Bitbot通过配置文件对系统参数及硬件设备进行配置与管理。�
         <device id="2" type="EncosJoint" name="L2" mode="motion" enable="1"
             motor_direction="-1"  kp="0" kd="3" slave_id="1"
             kp_range="500" kd_range="5" vel_range="18" pos_range="12.5"
-            torque_range="150" current_range="70"
+            torque_range="150" current_range="70" torque_constant="2.35"
         />
         <device id="8" type="YesenseIMU" name="imu" dev="/dev/ttyIMU" />
     </bus>
     <zero>
-        <zero_group reset_period="5">
-            <resetter name="L1" joint_lower_limit="-1.57" joint_upper_limit="1.57"
-            joint_reset_torque="5" joint_reset_velocity="3.14"/>
-            <resetter name="R1" joint_lower_limit="-1.57" joint_upper_limit="1.57"
-            joint_reset_torque="5" joint_reset_velocity="3.14"/>
-        </zero_group>
+        <resetter name="lhiproll" joint_lower_limit="-0.7853" joint_upper_limit="0.7853"
+            reset_period="5" joint_reset_torque="18" joint_reset_velocity="1.57" />
     </zero>
 </bitbot>
 
@@ -74,11 +70,9 @@ Bitbot通过配置文件对系统参数及硬件设备进行配置与管理。�
 
 * **current_range：** 设置电机电流范围，注意该参数需要与电机实际允许的范围一致，否则将导致错误或损坏电机！
 
+* **torque_constant:** 设置电机电流力矩系数，注意该参数需要与电机实际允许的范围一致，否则将导致错误或损坏电机！
+
 ## zero节点(仅在具备自动标零功能的关节上可用)
-
-* **zero_group：** 分组设置零点的分组顺序。
-
-* **reset_period：** 分组自动设置零点的工作时间。（设置过短可能导致关节未运动到限位，导致标定错误）。
 
 * **resetter：** 标定关节。
 
@@ -91,3 +85,5 @@ Bitbot通过配置文件对系统参数及硬件设备进行配置与管理。�
 * **joint_reset_torque：** 关节复位力矩（N/m）。
 
 * **joint_reset_velocity：** 关节复位速度（rad/s）。
+
+* **reset_period：** 分组自动设置零点的工作时间。（设置过短可能导致关节未运动到限位，导致标定错误）。
