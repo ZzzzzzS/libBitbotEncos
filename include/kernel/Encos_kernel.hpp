@@ -19,7 +19,7 @@ namespace bitbot
     /// @brief Bitbot Encos 内核事件类型，继承自EventId
     enum class EncosKernelEvent : EventId
     {
-        POWER_ON = 100,
+        POWER_ON = 200,
         START_RESET_ZERO,
         STOP_RESET_ZERO
     };
@@ -52,19 +52,6 @@ namespace bitbot
         EncosKernel(std::string config_file)
             : KernelTpl<EncosKernel<UserData>, EncosBus, UserData>(config_file)
         {
-            this->KernelRegisterEvent("power_on", static_cast<EventId>(EncosKernelEvent::POWER_ON), [this](EventValue, UserData&)
-                {
-                    this->logger_->info("joints power on");
-                    this->busmanager_.PowerOnDevice();
-                    this->logger_->info("joints power on finished");
-                    return static_cast<StateId>(EncosKernelState::POWER_ON_FINISH); }, false);
-            this->KernelRegisterState("power on finish", static_cast<StateId>(EncosKernelState::POWER_ON_FINISH),
-                [this](const bitbot::KernelInterface& kernel, ExtraData& extra_data, UserData& user_data) {}, { static_cast<EventId>(KernelEvent::START),static_cast<EventId>(EncosKernelEvent::START_RESET_ZERO) });
-
-            this->InjectEventsToState(static_cast<StateId>(KernelState::IDLE), { static_cast<EventId>(EncosKernelEvent::POWER_ON),static_cast<EventId>(EncosKernelEvent::START_RESET_ZERO) });
-
-
-
             pugi::xml_node EncosKernel_node = this->parser_->GetBitbotNode();
             pugi::xml_node Encos_node = EncosKernel_node.child("Encos");
             std::string NetWorkCard_name_const;
@@ -101,21 +88,30 @@ namespace bitbot
                 this->logger_->error("唔，初始化失败惹喵，应该怎么办呢喵，好着急呀喵，这下实验做不成了吧，小杂鱼~♥");
             }
 
-
-            std::vector<Encos_CANBusDevice*> dev = this->busmanager_.get_CAN_Devices();
-            std::vector<EncosJoint*> joints;
-            for (auto& device : dev)
+            std::vector<Encos_CANBusDevice *> dev = this->busmanager_.get_CAN_Devices();
+            std::vector<EncosJoint *> joints;
+            for (auto &device : dev)
             {
-                EncosJoint* joint = dynamic_cast<EncosJoint*>(device);
+                EncosJoint *joint = dynamic_cast<EncosJoint *>(device);
                 if (joint != nullptr)
                 {
                     joints.push_back(joint);
                 }
             }
 
+            this->KernelRegisterEvent("power_on", static_cast<EventId>(EncosKernelEvent::POWER_ON), [this](EventValue, UserData &)
+                                      {
+                    this->logger_->info("joints power on");
+                    this->busmanager_.PowerOnDevice();
+                    this->logger_->info("joints power on finished");
+                    return static_cast<StateId>(EncosKernelState::POWER_ON_FINISH); }, false);
 #ifdef FUNCTION_AUTO_ZERO
             this->joint_auto_zero__ = new JointAutoZero(EncosKernel_node.child("zero"), static_cast<double>(1.0 / static_cast<double>(bus_freq)), this->logger_, joints);
-            this->KernelRegisterEvent("start_reset_zero", static_cast<EventId>(EncosKernelEvent::START_RESET_ZERO), [this](EventValue e, UserData& d) {
+            this->KernelRegisterEvent("start_reset_zero", static_cast<EventId>(EncosKernelEvent::START_RESET_ZERO), [this](EventValue e, UserData &d)
+                                      {
+                if (e == static_cast<bitbot::EventValue>(bitbot::KeyboardEvent::Down))
+                    return std::optional<StateId>();
+
                 bool ok = this->joint_auto_zero__->StartReset(this->kernel_runtime_data_.periods_count);
                 if (ok)
                 {
@@ -126,11 +122,13 @@ namespace bitbot
                 {
                     this->logger_->error("JointAutoZero: start reset zero failed");
                     return std::optional<StateId>();
-                }
-                });
+                } });
 
+            this->KernelRegisterEvent("stop_reset_zero", static_cast<EventId>(EncosKernelEvent::STOP_RESET_ZERO), [this](EventValue e, UserData &d)
+                                      {
+                if (e == static_cast<bitbot::EventValue>(bitbot::KeyboardEvent::Down))
+                    return std::optional<StateId>();
 
-            this->KernelRegisterEvent("stop_reset_zero", static_cast<EventId>(EncosKernelEvent::STOP_RESET_ZERO), [this](EventValue e, UserData& d) {
                 bool ok = this->joint_auto_zero__->StopReset();
                 if (ok)
                 {
@@ -141,17 +139,28 @@ namespace bitbot
                 {
                     this->logger_->error("JointAutoZero: stop reset zero failed");
                     return std::optional<StateId>();
-                }
-                });
-
+                } });
 
             this->KernelRegisterState("auto zeroing", static_cast<StateId>(EncosKernelState::AUTO_ZEROING),
-                [this](const bitbot::KernelInterface& kernel, ExtraData& extra_data, UserData& user_data)
-                {
-                    this->joint_auto_zero__->StartReset(this->kernel_runtime_data_.periods_count);
-                },
-                { static_cast<EventId>(EncosKernelEvent::START_RESET_ZERO), static_cast<EventId>(EncosKernelEvent::STOP_RESET_ZERO) });
+                                      [this](const bitbot::KernelInterface &kernel, ExtraData &extra_data, UserData &user_data)
+                                      {
+                                          this->joint_auto_zero__->ResetState(this->kernel_runtime_data_.periods_count);
+                                      },
+                                      {static_cast<EventId>(EncosKernelEvent::START_RESET_ZERO), static_cast<EventId>(EncosKernelEvent::STOP_RESET_ZERO)});
+
+            this->KernelRegisterState("power on finish", static_cast<StateId>(EncosKernelState::POWER_ON_FINISH),
+                                      [this](const bitbot::KernelInterface &kernel, ExtraData &extra_data, UserData &user_data){}, {static_cast<EventId>(KernelEvent::START), static_cast<EventId>(EncosKernelEvent::START_RESET_ZERO)});
+
+            this->InjectEventsToState(static_cast<StateId>(KernelState::IDLE), {static_cast<EventId>(EncosKernelEvent::POWER_ON), static_cast<EventId>(EncosKernelEvent::START_RESET_ZERO)});
+
+#else
+            this->KernelRegisterState("power on finish", static_cast<StateId>(EncosKernelState::POWER_ON_FINISH),
+                                      [this](const bitbot::KernelInterface &kernel, ExtraData &extra_data, UserData &user_data) {}, {static_cast<EventId>(KernelEvent::START)});
+
+            this->InjectEventsToState(static_cast<StateId>(KernelState::IDLE), {static_cast<EventId>(EncosKernelEvent::POWER_ON)});
+
 #endif
+
             this->PrintWelcomeMessage(); // MUST PRIENT WELCOME MESSAGE!!!!!!
         }
 
@@ -187,7 +196,9 @@ namespace bitbot
             // init bus
             // loop
             if (this->is_init)
-                std::cout << "kernel start running!" << std::endl;
+            {
+                this->logger_->info("kernel start running");
+            }
 
             std::chrono::high_resolution_clock::time_point start_time = std::chrono::high_resolution_clock::now();
             std::chrono::high_resolution_clock::time_point last_time = start_time;
@@ -221,14 +232,15 @@ namespace bitbot
                 auto time_cost = std::chrono::duration_cast<std::chrono::microseconds>(end_time - start_time);
                 this->kernel_runtime_data_.process_time = std::chrono::duration_cast<std::chrono::microseconds>(time_cost).count() * ms_to_ms;
 
-                auto sleep_time = std::chrono::microseconds(this->run_period - 60) - time_cost; //-60为了修正一些误差
+                auto sleep_time = std::chrono::microseconds(this->run_period) - time_cost; //-60为了修正一些误差
                 if (sleep_time > std::chrono::microseconds(0)) [[likely]]
                 {
                     std::this_thread::sleep_for(sleep_time);
                 }
                 else
                 {
-                    this->logger_->warn("program time out!");
+                    if (this->kernel_runtime_data_.periods_count > 1000) [[likely]]
+                        this->logger_->warn("program time out!");
                 }
             }
         }
@@ -245,7 +257,7 @@ namespace bitbot
             std::string line6 = "\033[32m===================================================================================\033[0m";
 
             std::cout << std::endl
-                << std::endl;
+                      << std::endl;
             std::cout << "\033[31mWelcome to use Bitbot Encos. Make Bitbot Everywhere! \033[0m" << std::endl;
             std::cout << line0 << std::endl;
             std::cout << line1 << std::endl;
@@ -254,13 +266,13 @@ namespace bitbot
             std::cout << line4 << std::endl;
             std::cout << line5 << std::endl;
             std::cout << line6 << std::endl
-                << std::endl;
+                      << std::endl;
         }
         // function
     private:
         bool is_init;
         int run_period; // run period in micro second
 
-        JointAutoZero* joint_auto_zero__ = nullptr; // joint auto zero class
+        JointAutoZero *joint_auto_zero__ = nullptr; // joint auto zero class
     };
 };

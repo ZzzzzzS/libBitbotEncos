@@ -48,50 +48,48 @@ namespace bitbot
          * @param logger 日志记录器指针
          * @param joints 电机列表，包含所有的电机
          */
-        JointAutoZero(const pugi::xml_node& reset_node, double period, SpdLoggerSharedPtr logger, std::vector<EncosJoint*>& joints)
+        JointAutoZero(const pugi::xml_node &reset_node, double period, SpdLoggerSharedPtr logger, std::vector<EncosJoint *> &joints)
         {
             this->logger__ = logger;
             this->current_state__ = JointResetStates::Waiting;
 
-            pugi::xml_node reset_group_node = reset_node.child("zero_group");
+            pugi::xml_node reset_group_node = reset_node.child("resetter");
             while (reset_group_node != nullptr)
             {
-                pugi::xml_node resetter_node = reset_group_node.child("resetter");
-                joint_groups__.emplace_back(std::vector<EncosJoint*>());
+                pugi::xml_node resetter_node = reset_group_node;
+                joint_groups__.emplace_back(std::vector<EncosJoint *>());
                 joint_ranges__.emplace_back(std::vector<std::pair<float, float>>());
                 reset_torque__.emplace_back(std::vector<float>());
+                edge_position__.emplace_back(std::vector<float>());
                 reset_velocities__.emplace_back(std::vector<float>());
 
                 double reset_period;
                 ConfigParser::ParseAttribute2d(reset_period, reset_group_node.attribute("reset_period"));
                 this->reset_period_count__.emplace_back(static_cast<uint64_t>(reset_period / period));
 
-                while (resetter_node != nullptr)
+                std::string joint_name;
+                double joint_lower_limit, joint_upper_limit, joint_reset_torque, joint_reset_velocity;
+                ConfigParser::ParseAttribute2s(joint_name, resetter_node.attribute("name"));
+                ConfigParser::ParseAttribute2d(joint_lower_limit, resetter_node.attribute("joint_lower_limit"));
+                ConfigParser::ParseAttribute2d(joint_upper_limit, resetter_node.attribute("joint_upper_limit"));
+                ConfigParser::ParseAttribute2d(joint_reset_torque, resetter_node.attribute("joint_reset_torque"));
+                ConfigParser::ParseAttribute2d(joint_reset_velocity, resetter_node.attribute("joint_reset_velocity"));
+                EncosJoint *joint = GetJointById(joint_name, joints);
+
+                if (joint == nullptr)
                 {
-                    std::string joint_name;
-                    double joint_lower_limit, joint_upper_limit, joint_reset_torque, joint_reset_velocity;
-                    ConfigParser::ParseAttribute2s(joint_name, resetter_node.attribute("name"));
-                    ConfigParser::ParseAttribute2d(joint_lower_limit, resetter_node.attribute("joint_lower_limit"));
-                    ConfigParser::ParseAttribute2d(joint_upper_limit, resetter_node.attribute("joint_upper_limit"));
-                    ConfigParser::ParseAttribute2d(joint_reset_torque, resetter_node.attribute("joint_reset_torque"));
-                    ConfigParser::ParseAttribute2d(joint_reset_velocity, resetter_node.attribute("joint_reset_velocity"));
-                    EncosJoint* joint = GetJointById(joint_name, joints);
-
-                    if (joint == nullptr)
-                    {
-                        this->logger__->error("JointAutoZero: joint {} not found", joint_name);
-                        throw std::runtime_error("JointAutoZero: joint not found");
-                    }
-                    joints__.emplace_back(joint);
-
-                    joint_groups__.back().emplace_back(joint);
-                    joint_ranges__.back().emplace_back(std::make_pair(joint_lower_limit, joint_upper_limit));
-                    reset_torque__.back().emplace_back(joint_reset_torque);
-                    reset_velocities__.back().emplace_back(joint_reset_velocity);
-
-                    resetter_node = resetter_node.next_sibling("resetter");
+                    this->logger__->error("JointAutoZero: joint {} not found", joint_name);
+                    throw std::runtime_error("JointAutoZero: joint not found");
                 }
-                reset_group_node = reset_group_node.next_sibling("zero_group");
+                joints__.emplace_back(joint);
+
+                joint_groups__.back().emplace_back(joint);
+                joint_ranges__.back().emplace_back(std::make_pair(joint_lower_limit, joint_upper_limit));
+                reset_torque__.back().emplace_back(joint_reset_torque);
+                edge_position__.back().emplace_back(0);
+                reset_velocities__.back().emplace_back(joint_reset_velocity);
+
+                reset_group_node = reset_group_node.next_sibling("resetter");
             }
         }
 
@@ -109,7 +107,7 @@ namespace bitbot
                 this->current_state__ = JointResetStates::ApplyingTorque;
                 this->current_group_index__ = 0;
                 this->next_state_period_count__ = period_count + reset_period_count__[current_group_index__];
-                this->logger__->info("JointAutoZero: Applying constant torque in group 0");
+                this->logger__->info("\n\nJointAutoZero: Applying constant torque in joint 0");
                 for (auto joint : joints__)
                 {
                     joint->SetMode(EncosJointMode::Torque);
@@ -161,6 +159,7 @@ namespace bitbot
          */
         void ResetState(uint64_t period_count)
         {
+            // std::cout << "p_cnt:" << period_count << " target:" << next_state_period_count__ << " state:" << static_cast<int>(current_state__) << std::endl;
             switch (current_state__)
             {
             case JointResetStates::Waiting:
@@ -169,13 +168,14 @@ namespace bitbot
                 if (period_count >= next_state_period_count__)
                 {
                     this->current_state__ = JointResetStates::Resetting;
-                    period_count = period_count + reset_period_count__[current_group_index__];
+                    next_state_period_count__ = period_count + reset_period_count__[current_group_index__];
                     for (auto joint : joints__)
                     {
                         joint->SetMode(EncosJointMode::Torque);
                         joint->SetTargetTorque(0);
                     }
-                    std::string info = "JointAutoZero: resetting zero in group ";
+
+                    std::string info = "JointAutoZero: resetting zero for joint ";
                     info += std::to_string(current_group_index__);
                     this->logger__->info(info);
                 }
@@ -195,16 +195,16 @@ namespace bitbot
                         this->current_group_index__++;
                         this->next_state_period_count__ = period_count + reset_period_count__[current_group_index__];
 
-                        std::string info = "JointAutoZero: Applying constant torque in group ";
+                        std::string info = "\n\nJointAutoZero: Applying constant torque in joint ";
                         info += std::to_string(current_group_index__);
                         this->logger__->info(info);
                     }
 
-                    for (auto joint : joints__)
-                    {
-                        joint->SetMode(EncosJointMode::Torque);
-                        joint->SetTargetTorque(0);
-                    }
+                    // for (auto joint : joints__)
+                    // {
+                    //     joint->SetMode(EncosJointMode::Torque);
+                    //     joint->SetTargetTorque(0);
+                    // }
                 }
                 break;
             case JointResetStates::Finished:
@@ -212,7 +212,6 @@ namespace bitbot
             case JointResetStates::Stopped:
                 break;
             }
-
 
             switch (current_state__)
             {
@@ -246,7 +245,7 @@ namespace bitbot
         {
             for (size_t i = 0; i < joint_groups__[current_group_index__].size(); i++)
             {
-                this->logger__->info("JointAutoZero: joint {} zero point error= {}", joint_groups__[current_group_index__][i]->Name(), joint_groups__[current_group_index__][i]->GetActualPosition());
+                this->logger__->info("JointAutoZero: joint {} zero point error= {}", joint_groups__[current_group_index__][i]->Name(), joint_groups__[current_group_index__][i]->GetActualPosition() * this->r2d);
                 joint_groups__[current_group_index__][i]->ResetMotorPosition();
             }
         }
@@ -282,7 +281,7 @@ namespace bitbot
             }
         }
 
-        EncosJoint* GetJointById(std::string name, const std::vector<EncosJoint*>& joints)
+        EncosJoint *GetJointById(std::string name, const std::vector<EncosJoint *> &joints)
         {
             for (auto joint : joints)
             {
@@ -294,14 +293,13 @@ namespace bitbot
             return nullptr;
         }
 
-
     private:
         SpdLoggerSharedPtr logger__;
 
-        std::vector<EncosJoint*> joints__;
+        std::vector<EncosJoint *> joints__;
 
-        std::vector<std::vector<EncosJoint*>> joint_groups__;
-        std::vector<std::vector<std::pair<float, float>>> joint_ranges__; //lower upper
+        std::vector<std::vector<EncosJoint *>> joint_groups__;
+        std::vector<std::vector<std::pair<float, float>>> joint_ranges__; // lower upper
         std::vector<std::vector<float>> reset_torque__;
         std::vector<std::vector<float>> reset_velocities__;
 
@@ -311,5 +309,7 @@ namespace bitbot
         uint64_t next_state_period_count__;
         JointResetStates current_state__ = JointResetStates::Waiting;
         std::vector<std::vector<float>> edge_position__;
+
+        static constexpr float r2d = 180 / M_PI;
     };
 };

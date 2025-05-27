@@ -15,17 +15,17 @@ namespace bitbot
         uint8_t buf[4];
     };
 
-    EncosJoint::EncosJoint(const pugi::xml_node& joint_node)
+    EncosJoint::EncosJoint(const pugi::xml_node &joint_node)
         : Encos_CANBusDevice(joint_node),
-        JointMode__(EncosJointMode::Motion),
-        Enable__(false),
-        PowerOn__(false),
-        isConfig__(0),
-        WriteCmdType__(WriteCmdType_e::TORQUE_CONTROL)
+          JointMode__(EncosJointMode::Motion),
+          Enable__(false),
+          PowerOn__(false),
+          isConfig__(0),
+          WriteCmdType__(WriteCmdType_e::TORQUE_CONTROL)
     {
         this->basic_type_ = static_cast<uint32_t>(BasicDeviceType::MOTOR);
         this->type_ = static_cast<uint32_t>(EncosDeviceType::Encos_JOINT);
-        monitor_header_.headers = { "status", "mode", "actual_position", "target_position", "actual_velocity", "target_velocity", "actual_current", "target_torque", "motor_temp", "driver_temp" };
+        monitor_header_.headers = {"status", "mode", "actual_position", "target_position", "actual_velocity", "target_velocity", "actual_current", "target_torque", "motor_temp", "driver_temp"};
         monitor_data_.resize(monitor_header_.headers.size());
 
         std::string mode;
@@ -76,14 +76,13 @@ namespace bitbot
         ConfigParser::ParseAttribute2d(KT, joint_node.attribute("torque_constant"));
 
         this->ConfigData__ = new MotorConigurationData(static_cast<float>(MotorDirection),
-            static_cast<float>(kp_range),
-            static_cast<float>(kd_range),
-            static_cast<float>(vel_range),
-            static_cast<float>(pos_range),
-            static_cast<float>(torque_range),
-            static_cast<float>(current_range),
-            static_cast<float>(KT)
-        );
+                                                       static_cast<float>(kp_range),
+                                                       static_cast<float>(kd_range),
+                                                       static_cast<float>(vel_range),
+                                                       static_cast<float>(pos_range),
+                                                       static_cast<float>(torque_range),
+                                                       static_cast<float>(current_range),
+                                                       static_cast<float>(KT));
         this->RuntimeData__.CurrentLimit.store(current_range);
 
         double kp, kd;
@@ -174,32 +173,6 @@ namespace bitbot
     void EncosJoint::SetMode(EncosJointMode mode)
     {
         this->JointMode__ = mode;
-        switch (mode)
-        {
-        case EncosJointMode::Position:
-        {
-            this->WriteCmdType__ = WriteCmdType_e::POSITION_CONTROL;
-            break;
-        }
-        case EncosJointMode::Velocity:
-        {
-            this->WriteCmdType__ = WriteCmdType_e::VELOCITY_CONTROL;
-            break;
-        }
-        case EncosJointMode::Torque:
-        {
-            this->WriteCmdType__ = WriteCmdType_e::TORQUE_CONTROL;
-            break;
-        }
-        case EncosJointMode::Motion:
-        {
-            this->WriteCmdType__ = WriteCmdType_e::MOTION_CONTROL;
-            break;
-        }
-        default:
-            this->WriteCmdType__ = WriteCmdType_e::MOTION_CONTROL;
-            break;
-        }
     }
     EncosJointMode EncosJoint::GetMode()
     {
@@ -226,7 +199,7 @@ namespace bitbot
 
     std::tuple<float, float> EncosJoint::GetMotorTemperature()
     {
-        return { this->RuntimeData__.MotorTemperature.load(), this->RuntimeData__.DriverTemperature.load() };
+        return {this->RuntimeData__.MotorTemperature.load(), this->RuntimeData__.DriverTemperature.load()};
     }
 
     void EncosJoint::SetTargetPosition(float position, float move_velocity, float current_limit)
@@ -245,7 +218,7 @@ namespace bitbot
             if (current_limit == 0)
                 current_limit = this->ConfigData__->I_MAX;
             else
-                current_limit = std::clamp(current_limit, this->ConfigData__->I_MIN, this->ConfigData__->I_MAX);
+                current_limit = std::clamp(current_limit, 0.0f, this->ConfigData__->I_MAX);
             this->RuntimeData__.CurrentLimit.store(current_limit);
 
             if (!this->HighPriorityCommandWriting__.load()) // write this command only when high priority command is not writing the bus.
@@ -276,7 +249,7 @@ namespace bitbot
             if (current_limit == 0)
                 current_limit = this->ConfigData__->I_MAX;
             else
-                current_limit = std::clamp(current_limit, this->ConfigData__->I_MIN, this->ConfigData__->I_MAX);
+                current_limit = std::clamp(current_limit, 0.0f, this->ConfigData__->I_MAX);
             this->RuntimeData__.CurrentLimit.store(current_limit);
 
             if (!this->HighPriorityCommandWriting__.load()) // write this command only when high priority command is not writing the bus.
@@ -379,6 +352,7 @@ namespace bitbot
 
     void EncosJoint::ResetMotorPosition()
     {
+
         this->WriteCmdType__ = WriteCmdType_e::SET_ZERO;
         this->HighPriorityCommandWriting__.store(true);
     }
@@ -439,192 +413,191 @@ namespace bitbot
         }
     }
 
-    void EncosJoint::ReadBus(const CAN_Device_Msg& data)
+    void EncosJoint::ReadBus(const CAN_Device_Msg &data)
     {
         if (data.dlc == 0) [[unlikely]]
             return;
 
-            if (data.id == this->id_) [[likely]]
+        if (data.id == this->id_) [[likely]]
+        {
+            int ack_status = data.data[0] >> 5;
+            uint8_t error_code = data.data[0] & 0x1F;
+            this->ProcessErrorCode(error_code);
+
+            int pos_int = 0;
+            int spd_int = 0;
+            int cur_int = 0;
+
+            constexpr float deg2rad = M_PI / 180;
+            constexpr float rpm2rads = 2 * M_PI / 60;
+
+            switch (ack_status)
             {
-                int ack_status = data.data[0] >> 5;
-                uint8_t error_code = data.data[0] & 0x1F;
-                this->ProcessErrorCode(error_code);
+            case 1:
+            {
+                pos_int = data.data[1] << 8 | data.data[2];
+                spd_int = data.data[3] << 4 | (data.data[4] & 0xF0) >> 4;
+                cur_int = (data.data[4] & 0x0F) << 8 | data.data[5];
+                float angle = this->uint_to_float(pos_int, this->ConfigData__->POS_MIN, this->ConfigData__->POS_MAX, 16) * this->ConfigData__->MOTOR_DIRECTION;
+                float vel = this->uint_to_float(spd_int, this->ConfigData__->SPD_MIN, this->ConfigData__->SPD_MAX, 12) * this->ConfigData__->MOTOR_DIRECTION;
+                float current = this->uint_to_float(cur_int, this->ConfigData__->I_MIN, this->ConfigData__->I_MAX, 12) * this->ConfigData__->MOTOR_DIRECTION;
+                float motor_temp = (static_cast<float>(data.data[6] - 50)) / 2.0;
+                float mos_temp = (static_cast<float>(data.data[7] - 50)) / 2.0;
 
-                int pos_int = 0;
-                int spd_int = 0;
-                int cur_int = 0;
-
-                constexpr float deg2rad = M_PI / 180;
-                constexpr float rpm2rads = 2 * M_PI / 60;
-
-                switch (ack_status)
-                {
-                case 1:
-                {
-                    pos_int = data.data[1] << 8 | data.data[2];
-                    spd_int = data.data[3] << 4 | (data.data[4] & 0xF0) >> 4;
-                    cur_int = (data.data[4] & 0x0F) << 8 | data.data[5];
-                    float angle = this->uint_to_float(pos_int, this->ConfigData__->POS_MIN, this->ConfigData__->POS_MAX, 16) * this->ConfigData__->MOTOR_DIRECTION;
-                    float vel = this->uint_to_float(spd_int, this->ConfigData__->SPD_MIN, this->ConfigData__->SPD_MAX, 12) * this->ConfigData__->MOTOR_DIRECTION;
-                    float current = this->uint_to_float(cur_int, this->ConfigData__->I_MIN, this->ConfigData__->I_MAX, 12);
-                    float motor_temp = (static_cast<float>(data.data[6] - 50)) / 2.0;
-                    float mos_temp = (static_cast<float>(data.data[7] - 50)) / 2.0;
-
-                    this->RuntimeData__.CurrentPosition.store(angle);
-                    this->RuntimeData__.CurrentVelocity.store(vel);
-                    this->RuntimeData__.CurrentCurrent.store(current);
-                    this->RuntimeData__.MotorTemperature.store(motor_temp);
-                    this->RuntimeData__.DriverTemperature.store(mos_temp);
-                    break;
-                }
-
-                case 2:
-                {
-                    RV_TypeConvert rv_type_convert;
-                    rv_type_convert.buf[0] = data.data[4];
-                    rv_type_convert.buf[1] = data.data[3];
-                    rv_type_convert.buf[2] = data.data[2];
-                    rv_type_convert.buf[3] = data.data[1];
-                    float pos = rv_type_convert.to_float * deg2rad * this->ConfigData__->MOTOR_DIRECTION;
-                    int16_t cur_int = data.data[5] << 8 | data.data[6];
-
-                    this->RuntimeData__.CurrentPosition.store(pos);
-                    this->RuntimeData__.CurrentCurrent.store(static_cast<float>(cur_int) / 100.0f);
-                    this->RuntimeData__.CurrentVelocity.store(0);
-                    this->RuntimeData__.DriverTemperature.store(0);
-                    this->RuntimeData__.MotorTemperature.store((data.data[7] - 50.0) / 2.0);
-                    break;
-                }
-
-                case 3:
-                {
-                    RV_TypeConvert rv_type_convert;
-                    rv_type_convert.buf[0] = data.data[4];
-                    rv_type_convert.buf[1] = data.data[3];
-                    rv_type_convert.buf[2] = data.data[2];
-                    rv_type_convert.buf[3] = data.data[1];
-                    float vel = rv_type_convert.to_float * rpm2rads * this->ConfigData__->MOTOR_DIRECTION;
-                    int16_t cur_int = data.data[5] << 8 | data.data[6];
-
-                    this->RuntimeData__.CurrentPosition.store(0);
-                    this->RuntimeData__.CurrentCurrent.store(static_cast<float>(cur_int) / 100.0f);
-                    this->RuntimeData__.CurrentVelocity.store(vel);
-                    this->RuntimeData__.DriverTemperature.store(0);
-                    this->RuntimeData__.MotorTemperature.store((data.data[7] - 50.0) / 2.0);
-                    break;
-                }
-                case 4:
-                {
-                    if (data.dlc != 3)
-                        return;
-                    if (data.data[2] == 0x01)
-                    {
-                        std::string msg = "Motor ID: " + std::to_string(this->id_) + " set command " + std::to_string(data.data[1]) + " succeed.";
-                        this->logger_->info(msg);
-                    }
-                    else
-                    {
-                        std::string msg = "Motor ID: " + std::to_string(this->id_) + " set command " + std::to_string(data.data[1]) + " failed.";
-                        this->logger_->error(msg);
-                    }
-                }
-                case 5:
-                    // TODO: add unpack code for message 5
-                    break;
-
-                default:
-                    break;
-                }
+                this->RuntimeData__.CurrentPosition.store(angle);
+                this->RuntimeData__.CurrentVelocity.store(vel);
+                this->RuntimeData__.CurrentCurrent.store(current);
+                this->RuntimeData__.MotorTemperature.store(motor_temp);
+                this->RuntimeData__.DriverTemperature.store(mos_temp);
+                break;
             }
-            else if (data.id == this->Alternative_ID__)
+
+            case 2:
             {
+                RV_TypeConvert rv_type_convert;
+                rv_type_convert.buf[0] = data.data[4];
+                rv_type_convert.buf[1] = data.data[3];
+                rv_type_convert.buf[2] = data.data[2];
+                rv_type_convert.buf[3] = data.data[1];
+                float pos = rv_type_convert.to_float * deg2rad * this->ConfigData__->MOTOR_DIRECTION;
+                int16_t cur_int = data.data[5] << 8 | data.data[6];
 
-                if (data.data[2] != 0x01) // not response frame
+                this->RuntimeData__.CurrentPosition.store(pos);
+                this->RuntimeData__.CurrentCurrent.store(static_cast<float>(cur_int) / 100.0f * this->ConfigData__->MOTOR_DIRECTION);
+                this->RuntimeData__.CurrentVelocity.store(0);
+                this->RuntimeData__.DriverTemperature.store(0);
+                this->RuntimeData__.MotorTemperature.store((data.data[7] - 50.0) / 2.0);
+                break;
+            }
+
+            case 3:
+            {
+                RV_TypeConvert rv_type_convert;
+                rv_type_convert.buf[0] = data.data[4];
+                rv_type_convert.buf[1] = data.data[3];
+                rv_type_convert.buf[2] = data.data[2];
+                rv_type_convert.buf[3] = data.data[1];
+                float vel = rv_type_convert.to_float * rpm2rads * this->ConfigData__->MOTOR_DIRECTION;
+                int16_t cur_int = data.data[5] << 8 | data.data[6];
+
+                this->RuntimeData__.CurrentPosition.store(0);
+                this->RuntimeData__.CurrentCurrent.store(static_cast<float>(cur_int) / 100.0f * this->ConfigData__->MOTOR_DIRECTION);
+                this->RuntimeData__.CurrentVelocity.store(vel);
+                this->RuntimeData__.DriverTemperature.store(0);
+                this->RuntimeData__.MotorTemperature.store((data.data[7] - 50.0) / 2.0);
+                break;
+            }
+            case 4:
+            {
+                if (data.dlc != 3)
                     return;
-
-                if ((data.data[0] == 0xff) && (data.data[1] == 0xFF)) // inquire success
+                if (data.data[2] == 0x01)
                 {
-                    uint16_t motor_id = data.data[3] << 8 | data.data[4];
-                    if (motor_id == this->id_)
-                    {
-                        std::string msg = "Motor ID: " + std::to_string(motor_id) + " is online.";
-                        this->logger_->info(msg);
-                    }
-                }
-                else if ((data.data[0] == 0x80) && (data.data[1] == 0x80)) // inquire failed
-                {
-                    // motor process error
-                }
-                else if ((data.data[0] == 0x7F) && (data.data[1] == 0x7F)) // reset ID succeed
-                {
-                    std::string msg = "Motor ID: " + std::to_string(this->id_) + " is set to 1, however is strongly NOT recommend use motor reset command in Bitbot Encos!";
-                    this->logger_->warn(msg);
+                    std::string msg = "Motor ID: " + std::to_string(this->id_) + " set command " + std::to_string(data.data[1]) + " succeed.";
+                    this->logger_->info(msg);
                 }
                 else
                 {
-                    uint16_t motor_id = data.data[0] << 8 | data.data[1];
-                    uint8_t motor_fbd = data.data[3];
-                    if (motor_id == this->id_)
-                    {
-                        switch (motor_fbd)
-                        {
-                        case 0x01:
-                        {
-                            std::string msg = "Motor ID: " + std::to_string(motor_id) + " is set in auto reply mode. however, it is strongly NOT recommend use motor auto reply mode in Bitbot Encos!";
-                            this->logger_->warn(msg);
-                            break;
-                        }
-                        case 0x02:
-                        {
-                            std::string msg = "Motor ID: " + std::to_string(motor_id) + " is set in query reply mode.";
-                            this->logger_->info(msg);
-                            break;
-                        }
-                        case 0x80:
-                        {
-                            std::string msg = "Motor ID: " + std::to_string(motor_id) + " receive code: 0x80, query failed.";
-                            this->logger_->error(msg);
-                            break;
-                        }
-                        case 0x03:
-                        {
-                            static std::chrono::high_resolution_clock::time_point last_call;
-                            std::chrono::high_resolution_clock::time_point now = std::chrono::high_resolution_clock::now();
-                            if (std::chrono::duration_cast<std::chrono::milliseconds>(now - last_call).count() > 1000)
-                            {
-                                std::string msg = "Motor ID: " + std::to_string(motor_id) + " sets current position as zero.";
-                                this->logger_->info(msg);
-                            }
-                            last_call = now;
-
-                            break;
-                        }
-                        case 0x04:
-                        {
-                            std::string msg = "Motor ID: " + std::to_string(motor_id) + " has been updated, remember to update the ID in Bitbot configuration file!";
-                            this->logger_->info(msg);
-                            break;
-                        }
-                        case 0x00:
-                        {
-                            std::string msg = "Motor ID: " + std::to_string(motor_id) + " receive code: 0x00， command failed.";
-                            this->logger_->error(msg);
-                            break;
-                        }
-                        default:
-                        {
-                            std::string msg = "Motor ID: " + std::to_string(motor_id) + " receive unknown command: " + std::to_string(motor_fbd);
-                            this->logger_->error(msg);
-                        }
-                        break;
-                        }
-                    }
+                    std::string msg = "Motor ID: " + std::to_string(this->id_) + " set command " + std::to_string(data.data[1]) + " failed.";
+                    this->logger_->error(msg);
                 }
+            }
+            case 5:
+                // TODO: add unpack code for message 5
+                break;
+
+            default:
+                break;
+            }
+        }
+        else if (data.id == this->Alternative_ID__)
+        {
+
+            if (data.data[2] != 0x01) // not response frame
+                return;
+
+            if ((data.data[0] == 0xff) && (data.data[1] == 0xFF)) // inquire success
+            {
+                uint16_t motor_id = data.data[3] << 8 | data.data[4];
+                if (motor_id == this->id_)
+                {
+                    std::string msg = "Motor ID: " + std::to_string(motor_id) + " is online.";
+                    this->logger_->info(msg);
+                }
+            }
+            else if ((data.data[0] == 0x80) && (data.data[1] == 0x80)) // inquire failed
+            {
+                // motor process error
+            }
+            else if ((data.data[0] == 0x7F) && (data.data[1] == 0x7F)) // reset ID succeed
+            {
+                std::string msg = "Motor ID: " + std::to_string(this->id_) + " is set to 1, however is strongly NOT recommend use motor reset command in Bitbot Encos!";
+                this->logger_->warn(msg);
             }
             else
             {
-                /* code */
+                uint16_t motor_id = data.data[0] << 8 | data.data[1];
+                uint8_t motor_fbd = data.data[3];
+                if (motor_id == this->id_)
+                {
+                    switch (motor_fbd)
+                    {
+                    case 0x01:
+                    {
+                        std::string msg = "Motor ID: " + std::to_string(motor_id) + " is set in auto reply mode. however, it is strongly NOT recommend use motor auto reply mode in Bitbot Encos!";
+                        this->logger_->warn(msg);
+                        break;
+                    }
+                    case 0x02:
+                    {
+                        std::string msg = "Motor ID: " + std::to_string(motor_id) + " is set in query reply mode.";
+                        this->logger_->info(msg);
+                        break;
+                    }
+                    case 0x80:
+                    {
+                        std::string msg = "Motor ID: " + std::to_string(motor_id) + " receive code: 0x80, query failed.";
+                        this->logger_->error(msg);
+                        break;
+                    }
+                    case 0x03:
+                    {
+                        static std::chrono::high_resolution_clock::time_point last_call;
+                        std::chrono::high_resolution_clock::time_point now = std::chrono::high_resolution_clock::now();
+                        if (std::chrono::duration_cast<std::chrono::milliseconds>(now - last_call).count() > 1000)
+                        {
+                            std::string msg = "Motor ID: " + std::to_string(motor_id) + " sets current position as zero.";
+                            this->logger_->info(msg);
+                        }
+                        last_call = now;
+                        break;
+                    }
+                    case 0x04:
+                    {
+                        std::string msg = "Motor ID: " + std::to_string(motor_id) + " has been updated, remember to update the ID in Bitbot configuration file!";
+                        this->logger_->info(msg);
+                        break;
+                    }
+                    case 0x00:
+                    {
+                        std::string msg = "Motor ID: " + std::to_string(motor_id) + " receive code: 0x00， command failed.";
+                        this->logger_->error(msg);
+                        break;
+                    }
+                    default:
+                    {
+                        std::string msg = "Motor ID: " + std::to_string(motor_id) + " receive unknown command: " + std::to_string(motor_fbd);
+                        this->logger_->error(msg);
+                    }
+                    break;
+                    }
+                }
             }
+        }
+        else
+        {
+            /* code */
+        }
     }
 
     void EncosJoint::ShiftCommand()
@@ -654,9 +627,10 @@ namespace bitbot
         }
     }
 
-    void EncosJoint::WriteBus(CAN_Device_Msg& data)
+    void EncosJoint::WriteBus(CAN_Device_Msg &data)
     {
         constexpr uint32_t CFG_BUS_WAIT = 500;
+
         this->HighPriorityCommandWriting__.store(false);
         if (this->isConfig__ == 0) [[likely]]
         {
@@ -751,7 +725,7 @@ namespace bitbot
         return this->Slave_ID__;
     }
 
-    void EncosJoint::get_CAN_IDs(std::vector<size_t>& ids) const
+    void EncosJoint::get_CAN_IDs(std::vector<size_t> &ids) const
     {
         ids.resize(2);
         ids[0] = this->id_;
@@ -774,7 +748,7 @@ namespace bitbot
         return ((float)x_int) * span / ((float)((1 << bits) - 1)) + offset;
     }
 
-    void EncosJoint::WriteBusSetMotorMotionControl(CAN_Device_Msg& data)
+    void EncosJoint::WriteBusSetMotorMotionControl(CAN_Device_Msg &data)
     {
         if (this->Enable__ && this->PowerOn__)
         {
@@ -809,7 +783,7 @@ namespace bitbot
         }
     }
 
-    void EncosJoint::WriteBusSetMotorPositionControl(CAN_Device_Msg& data)
+    void EncosJoint::WriteBusSetMotorPositionControl(CAN_Device_Msg &data)
     {
         if (this->Enable__ && this->PowerOn__)
         {
@@ -841,7 +815,7 @@ namespace bitbot
         }
     }
 
-    void EncosJoint::WriteBusSetMotorVelocityControl(CAN_Device_Msg& data)
+    void EncosJoint::WriteBusSetMotorVelocityControl(CAN_Device_Msg &data)
     {
         if (this->Enable__ && this->PowerOn__)
         {
@@ -869,7 +843,7 @@ namespace bitbot
         }
     }
 
-    void EncosJoint::WriteBusSetMotorCurrentControl(CAN_Device_Msg& data)
+    void EncosJoint::WriteBusSetMotorCurrentControl(CAN_Device_Msg &data)
     {
         if (this->Enable__ && this->PowerOn__)
         {
@@ -879,7 +853,7 @@ namespace bitbot
             constexpr uint8_t ack_status = 0x01;
             constexpr uint8_t ctrl_status = 0x00;
 
-            int16_t cur_tor = this->RuntimeData__.TargetCurrent.load() * 100.0;
+            int16_t cur_tor = this->RuntimeData__.TargetCurrent.load() * this->ConfigData__->MOTOR_DIRECTION * 100.0;
             data.data[0] = 0x60 | ctrl_status << 2 | ack_status;
             data.data[1] = cur_tor >> 8;
             data.data[2] = cur_tor & 0xff;
@@ -890,7 +864,7 @@ namespace bitbot
         }
     }
 
-    void EncosJoint::WriteBusSetMotorTorqueControl(CAN_Device_Msg& data)
+    void EncosJoint::WriteBusSetMotorTorqueControl(CAN_Device_Msg &data)
     {
         if (this->Enable__ && this->PowerOn__)
         {
@@ -900,7 +874,7 @@ namespace bitbot
             constexpr uint8_t ack_status = 0x01;
             constexpr uint8_t ctrl_status = 0x01;
 
-            int16_t cur_tor = this->RuntimeData__.TargetTorque.load() * 100.0;
+            int16_t cur_tor = this->RuntimeData__.TargetTorque.load() * this->ConfigData__->MOTOR_DIRECTION * 100.0;
             data.data[0] = 0x60 | ctrl_status << 2 | ack_status;
             data.data[1] = cur_tor >> 8;
             data.data[2] = cur_tor & 0xff;
@@ -911,7 +885,7 @@ namespace bitbot
         }
     }
 
-    void EncosJoint::WriteBusSetMotorDisabledControl(CAN_Device_Msg& data)
+    void EncosJoint::WriteBusSetMotorDisabledControl(CAN_Device_Msg &data)
     {
 
         data.id = this->id_;
@@ -925,7 +899,7 @@ namespace bitbot
         data.data[2] = cur_tor & 0xff;
     }
 
-    void EncosJoint::WriteBusSetZero(CAN_Device_Msg& data)
+    void EncosJoint::WriteBusSetZero(CAN_Device_Msg &data)
     {
         data.id = this->Alternative_ID__;
         data.rtr = 0;
@@ -937,7 +911,7 @@ namespace bitbot
         data.data[3] = 0x03;
     }
 
-    void EncosJoint::WriteBusReadCommMode(CAN_Device_Msg& data)
+    void EncosJoint::WriteBusReadCommMode(CAN_Device_Msg &data)
     {
         data.rtr = 0;
         data.id = this->Alternative_ID__;
@@ -950,7 +924,7 @@ namespace bitbot
         data.data[3] = 0x81;
     }
 
-    void EncosJoint::WriteBusRead_CAN_ID(CAN_Device_Msg& data)
+    void EncosJoint::WriteBusRead_CAN_ID(CAN_Device_Msg &data)
     {
         data.rtr = 0;
         data.id = this->Alternative_ID__;
@@ -962,7 +936,7 @@ namespace bitbot
         data.data[3] = 0x82;
     }
 
-    void EncosJoint::WriteBusSettingsMotorAcc(CAN_Device_Msg& data)
+    void EncosJoint::WriteBusSettingsMotorAcc(CAN_Device_Msg &data)
     {
         data.dlc = 4;
         data.rtr = 0;
@@ -976,7 +950,7 @@ namespace bitbot
         data.data[3] = acc & 0xff;
     }
 
-    void EncosJoint::WriteBusSettingsLinkComp(CAN_Device_Msg& data)
+    void EncosJoint::WriteBusSettingsLinkComp(CAN_Device_Msg &data)
     {
         data.dlc = 6;
         data.rtr = 0;
@@ -994,7 +968,7 @@ namespace bitbot
         data.data[5] = speedKI & 0xff;
     }
 
-    void EncosJoint::WriteBusSettings_FB_KD(CAN_Device_Msg& data)
+    void EncosJoint::WriteBusSettings_FB_KD(CAN_Device_Msg &data)
     {
         data.rtr = 0;
         data.dlc = 6;
