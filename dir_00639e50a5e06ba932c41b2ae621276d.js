@@ -1,10 +1,6 @@
 var dir_00639e50a5e06ba932c41b2ae621276d =
 [
-    [ "Encos_device.hpp", "Encos__device_8hpp.html", "Encos__device_8hpp" ],
-    [ "Encos_joint.h", "Encos__joint_8h.html", "Encos__joint_8h" ],
-    [ "yesense_imu.h", "yesense__imu_8h.html", [
-      [ "ImuRuntimeData", "structbitbot_1_1ImuRuntimeData.html", "structbitbot_1_1ImuRuntimeData" ],
-      [ "ImuData", "structbitbot_1_1ImuData.html", "structbitbot_1_1ImuData" ],
-      [ "YesenseIMU", "classbitbot_1_1YesenseIMU.html", "classbitbot_1_1YesenseIMU" ]
-    ] ]
+    [ "Encos_device.hpp", "_encos__device_8hpp.html", "_encos__device_8hpp" ],
+    [ "Encos_joint.h", "_encos__joint_8h.html", "_encos__joint_8h" ],
+    [ "yesense_imu.h", "yesense__imu_8h.html", "yesense__imu_8h" ]
 ];

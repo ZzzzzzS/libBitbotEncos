@@ -1,8 +1,3 @@
 <map id="类继承关系图" name="类继承关系图">
-<area shape="rect" id="node1" title=" " alt="" coords="5,35,72,61"/>
-<area shape="rect" id="node2" href="$classbitbot_1_1EncosDevice.html" title="Encos设备类，继承自Device, 用户可以使用该类来管理Encos设备。" alt="" coords="120,35,271,61"/>
-<area shape="rect" id="node3" href="$classbitbot_1_1Encos__CANBusDevice.html" title="Encos总线设备类，继承自EncosDevice, 用户可以使用该类来管理Encos总线设备。 该类型仅适用于开发者使用，用户无需关心其实现细节。该类型设备是指实际挂载在EtherCAT总线上的设备。" alt="" coords="319,5,529,32"/>
-<area shape="rect" id="node5" href="$classbitbot_1_1Encos__VirtualBusDevice.html" title="Encos虚拟总线设备类，继承自EncosDevice, 用户可以使用该类来管理Encos虚拟总线设备。 该类型仅适用于开发者使用，用户无需关心其实现细节。该类型设备是指未挂载在EtherCAT总线上的..." alt="" coords="334,57,514,98"/>
-<area shape="rect" id="node4" href="$classbitbot_1_1EncosJoint.html" title="Encos电机类，继承自Encos_CANBusDevice, 用户可以使用该类来管理电机设备。" alt="" coords="583,5,718,32"/>
-<area shape="rect" id="node6" href="$classbitbot_1_1YesenseIMU.html" title="Bitbot Encos Yesense IMU类，继承自Encos_VirtualBusDevice, 用户可以使用该类来管理Yesense IMU设备。" alt="" coords="577,64,724,91"/>
+<area shape="rect" id="Node000000" href="$structbitbot_1_1_imu_runtime_data.html" title="IMU运行时数据结构体" alt="" coords="5,5,166,32"/>
 </map>

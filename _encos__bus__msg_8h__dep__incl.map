@@ -1,0 +1,19 @@
+<map id="C:/Users/ZhouZishun/Documents/Workspace/OwheelNT/Bitbot_Encos/include/bus/Encos_bus_msg.h" name="C:/Users/ZhouZishun/Documents/Workspace/OwheelNT/Bitbot_Encos/include/bus/Encos_bus_msg.h">
+<area shape="rect" id="Node000001" title="Bitbot Encos bus msg header file" alt="" coords="199,5,402,80"/>
+<area shape="rect" id="Node000002" href="$_encos__bus_8h.html" title="Bitbot Encos bus header file" alt="" coords="5,251,177,325"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="226,91,181,130,158,159,138,191,108,251,103,249,133,189,153,156,177,126,222,87"/>
+<area shape="rect" id="Node000005" href="$_encos__device_8hpp.html" title="Bitbot Encos device header file" alt="" coords="191,128,410,203"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="303,96,303,128,298,128,298,96"/>
+<area shape="rect" id="Node000006" href="$_encos__joint_8h.html" title="Bitbot Encos joint header file" alt="" coords="425,251,616,325"/>
+<area shape="poly" id="edge10_Node000001_Node000006" title=" " alt="" coords="377,87,424,126,449,156,471,189,506,249,501,252,467,192,445,159,420,130,374,91"/>
+<area shape="rect" id="Node000003" href="$_encos__kernel_8hpp.html" title="Bitbot Encos kernel header file" alt="" coords="58,496,271,571"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="97,340,105,393,119,447,142,494,137,497,114,449,99,394,92,341"/>
+<area shape="rect" id="Node000004" href="$_joint___auto_zero_8hpp.html" title="JointAutoZero类用于自动归零电机位置" alt="" coords="128,373,350,448"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="149,333,196,371,192,375,146,337"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="210,463,189,497,185,494,206,460"/>
+<area shape="poly" id="edge6_Node000005_Node000002" title=" " alt="" coords="225,213,156,252,154,248,222,208"/>
+<area shape="poly" id="edge7_Node000005_Node000006" title=" " alt="" coords="382,208,454,248,452,252,379,213"/>
+<area shape="rect" id="Node000007" href="$yesense__imu_8h.html" title="Bitbot Encos Yesense IMU header file" alt="" coords="200,251,400,325"/>
+<area shape="poly" id="edge9_Node000005_Node000007" title=" " alt="" coords="303,219,303,250,298,250,298,219"/>
+<area shape="poly" id="edge8_Node000006_Node000004" title=" " alt="" coords="421,334,326,375,324,370,419,330"/>
+</map>

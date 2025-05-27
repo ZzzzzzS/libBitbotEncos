@@ -1,0 +1,339 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>BitbotEncos: bitbot::JointAutoZero类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">BitbotEncos
+   </div>
+   <div id="projectbrief">Bitbot Encos is a bitbot instance for encos motor.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('classbitbot_1_1_joint_auto_zero.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="classbitbot_1_1_joint_auto_zero-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">bitbot::JointAutoZero类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:a61997dcb6278a0068b7029a697ed6c53" id="r_a61997dcb6278a0068b7029a697ed6c53"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a61997dcb6278a0068b7029a697ed6c53">JointResetStates</a> { <br />
+&#160;&#160;<a class="el" href="#a61997dcb6278a0068b7029a697ed6c53a5706de961fb376d701be6e7762d8b09c">Waiting</a>
+, <a class="el" href="#a61997dcb6278a0068b7029a697ed6c53a450605916f7a47850d5a46db58fd2f96">ApplyingTorque</a>
+, <a class="el" href="#a61997dcb6278a0068b7029a697ed6c53a84ba6b6de6447541f9cdfa184d1d2792">Resetting</a>
+, <a class="el" href="#a61997dcb6278a0068b7029a697ed6c53a8f3d10eb21bd36347c258679eba9e92b">Finished</a>
+, <br />
+&#160;&#160;<a class="el" href="#a61997dcb6278a0068b7029a697ed6c53ac23e2b09ebe6bf4cb5e2a9abe85c0be2">Stopped</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:a61997dcb6278a0068b7029a697ed6c53"><td class="mdescLeft">&#160;</td><td class="mdescRight">JointResetStates枚举类  <a href="#a61997dcb6278a0068b7029a697ed6c53">更多...</a><br /></td></tr>
+<tr class="separator:a61997dcb6278a0068b7029a697ed6c53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:af14c260bd8a097415f93da108dc9680c" id="r_af14c260bd8a097415f93da108dc9680c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af14c260bd8a097415f93da108dc9680c">JointAutoZero</a> (const pugi::xml_node &amp;reset_node, double period, SpdLoggerSharedPtr logger, std::vector&lt; <a class="el" href="classbitbot_1_1_encos_joint.html">EncosJoint</a> * &gt; &amp;joints)</td></tr>
+<tr class="memdesc:af14c260bd8a097415f93da108dc9680c"><td class="mdescLeft">&#160;</td><td class="mdescRight">JointAutoZero构造函数  <br /></td></tr>
+<tr class="separator:af14c260bd8a097415f93da108dc9680c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f4aa1619bf35951e695f9acad53c711" id="r_a3f4aa1619bf35951e695f9acad53c711"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3f4aa1619bf35951e695f9acad53c711">StartReset</a> (uint64_t period_count)</td></tr>
+<tr class="memdesc:a3f4aa1619bf35951e695f9acad53c711"><td class="mdescLeft">&#160;</td><td class="mdescRight">开始归零操作  <br /></td></tr>
+<tr class="separator:a3f4aa1619bf35951e695f9acad53c711"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36c3d706721714ce96a8558d3fe9dbab" id="r_a36c3d706721714ce96a8558d3fe9dbab"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a36c3d706721714ce96a8558d3fe9dbab">StopReset</a> ()</td></tr>
+<tr class="memdesc:a36c3d706721714ce96a8558d3fe9dbab"><td class="mdescLeft">&#160;</td><td class="mdescRight">停止归零操作  <br /></td></tr>
+<tr class="separator:a36c3d706721714ce96a8558d3fe9dbab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea14661d0c16d819be0bb147b33ff523" id="r_aea14661d0c16d819be0bb147b33ff523"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea14661d0c16d819be0bb147b33ff523">ResetState</a> (uint64_t period_count)</td></tr>
+<tr class="memdesc:aea14661d0c16d819be0bb147b33ff523"><td class="mdescLeft">&#160;</td><td class="mdescRight">重置状态  <br /></td></tr>
+<tr class="separator:aea14661d0c16d819be0bb147b33ff523"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">成员枚举类型说明</h2>
+<a id="a61997dcb6278a0068b7029a697ed6c53" name="a61997dcb6278a0068b7029a697ed6c53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61997dcb6278a0068b7029a697ed6c53">&#9670;&#160;</a></span>JointResetStates</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#a61997dcb6278a0068b7029a697ed6c53">bitbot::JointAutoZero::JointResetStates</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>JointResetStates枚举类 </p>
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a61997dcb6278a0068b7029a697ed6c53a5706de961fb376d701be6e7762d8b09c" name="a61997dcb6278a0068b7029a697ed6c53a5706de961fb376d701be6e7762d8b09c"></a>Waiting&#160;</td><td class="fielddoc"><p>等待状态 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a61997dcb6278a0068b7029a697ed6c53a450605916f7a47850d5a46db58fd2f96" name="a61997dcb6278a0068b7029a697ed6c53a450605916f7a47850d5a46db58fd2f96"></a>ApplyingTorque&#160;</td><td class="fielddoc"><p>应用力矩状态 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a61997dcb6278a0068b7029a697ed6c53a84ba6b6de6447541f9cdfa184d1d2792" name="a61997dcb6278a0068b7029a697ed6c53a84ba6b6de6447541f9cdfa184d1d2792"></a>Resetting&#160;</td><td class="fielddoc"><p>归零状态 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a61997dcb6278a0068b7029a697ed6c53a8f3d10eb21bd36347c258679eba9e92b" name="a61997dcb6278a0068b7029a697ed6c53a8f3d10eb21bd36347c258679eba9e92b"></a>Finished&#160;</td><td class="fielddoc"><p>归零完成状态 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a61997dcb6278a0068b7029a697ed6c53ac23e2b09ebe6bf4cb5e2a9abe85c0be2" name="a61997dcb6278a0068b7029a697ed6c53ac23e2b09ebe6bf4cb5e2a9abe85c0be2"></a>Stopped&#160;</td><td class="fielddoc"><p>停止状态 </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="af14c260bd8a097415f93da108dc9680c" name="af14c260bd8a097415f93da108dc9680c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af14c260bd8a097415f93da108dc9680c">&#9670;&#160;</a></span>JointAutoZero()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bitbot::JointAutoZero::JointAutoZero </td>
+          <td>(</td>
+          <td class="paramtype">const pugi::xml_node &amp;</td>          <td class="paramname"><span class="paramname"><em>reset_node</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>period</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SpdLoggerSharedPtr</td>          <td class="paramname"><span class="paramname"><em>logger</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="classbitbot_1_1_encos_joint.html">EncosJoint</a> * &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>joints</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>JointAutoZero构造函数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reset_node</td><td>xml节点，包含归零配置 </td></tr>
+    <tr><td class="paramname">period</td><td>内核运行周期时间 </td></tr>
+    <tr><td class="paramname">logger</td><td>日志记录器指针 </td></tr>
+    <tr><td class="paramname">joints</td><td>电机列表，包含所有的电机 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="aea14661d0c16d819be0bb147b33ff523" name="aea14661d0c16d819be0bb147b33ff523"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea14661d0c16d819be0bb147b33ff523">&#9670;&#160;</a></span>ResetState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bitbot::JointAutoZero::ResetState </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t</td>          <td class="paramname"><span class="paramname"><em>period_count</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>重置状态 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">period_count</td><td>归零操作的周期计数 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3f4aa1619bf35951e695f9acad53c711" name="a3f4aa1619bf35951e695f9acad53c711"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f4aa1619bf35951e695f9acad53c711">&#9670;&#160;</a></span>StartReset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool bitbot::JointAutoZero::StartReset </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t</td>          <td class="paramname"><span class="paramname"><em>period_count</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>开始归零操作 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">period_count</td><td>归零操作的周期计数 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>true 开始归零操作成功 </dd>
+<dd>
+false 开始归零操作失败，可能是当前状态不允许开始归零 </dd></dl>
+
+</div>
+</div>
+<a id="a36c3d706721714ce96a8558d3fe9dbab" name="a36c3d706721714ce96a8558d3fe9dbab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36c3d706721714ce96a8558d3fe9dbab">&#9670;&#160;</a></span>StopReset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool bitbot::JointAutoZero::StopReset </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>停止归零操作 </p>
+<dl class="section return"><dt>返回</dt><dd>true 归零操作停止成功 </dd>
+<dd>
+false 归零操作停止失败，可能是当前状态不允许停止归零 </dd></dl>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>C:/Users/ZhouZishun/Documents/Workspace/OwheelNT/Bitbot_Encos/include/kernel/<a class="el" href="_joint___auto_zero_8hpp_source.html">Joint_AutoZero.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>bitbot</b></li><li class="navelem"><a class="el" href="classbitbot_1_1_joint_auto_zero.html">JointAutoZero</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

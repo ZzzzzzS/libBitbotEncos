@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['imudata_154',['ImuData',['../structbitbot_1_1ImuData.html',1,'bitbot']]],
-  ['imuruntimedata_155',['ImuRuntimeData',['../structbitbot_1_1ImuRuntimeData.html',1,'bitbot']]]
+  ['imudata_0',['ImuData',['../structbitbot_1_1_imu_data.html',1,'bitbot']]],
+  ['imuruntimedata_1',['ImuRuntimeData',['../structbitbot_1_1_imu_runtime_data.html',1,'bitbot']]]
 ];

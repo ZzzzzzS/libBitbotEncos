@@ -1,6 +1,0 @@
-<map id="bitbot::EncosJoint" name="bitbot::EncosJoint">
-<area shape="rect" id="node1" title="Encos电机类，继承自Encos_CANBusDevice, 用户可以使用该类来管理电机设备。" alt="" coords="43,229,178,256"/>
-<area shape="rect" id="node2" href="$classbitbot_1_1Encos__CANBusDevice.html" title="Encos总线设备类，继承自EncosDevice, 用户可以使用该类来管理Encos总线设备。 该类型仅适用于开发者使用，用户无需关心其实现细节。该类型设备是指实际挂载在EtherCAT总线上的设备。" alt="" coords="5,155,216,181"/>
-<area shape="rect" id="node3" href="$classbitbot_1_1EncosDevice.html" title="Encos设备类，继承自Device, 用户可以使用该类来管理Encos设备。" alt="" coords="35,80,186,107"/>
-<area shape="rect" id="node4" title=" " alt="" coords="77,5,144,32"/>
-</map>

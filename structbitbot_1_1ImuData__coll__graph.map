@@ -1,4 +1,0 @@
-<map id="bitbot::ImuData" name="bitbot::ImuData">
-<area shape="rect" id="node1" title="IMU数据结构体" alt="" coords="33,95,157,121"/>
-<area shape="rect" id="node2" href="$structbitbot_1_1ImuRuntimeData.html" title="IMU运行时数据结构体" alt="" coords="5,5,184,32"/>
-</map>

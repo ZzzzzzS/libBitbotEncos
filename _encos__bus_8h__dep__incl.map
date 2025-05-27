@@ -1,0 +1,8 @@
+<map id="C:/Users/ZhouZishun/Documents/Workspace/OwheelNT/Bitbot_Encos/include/bus/Encos_bus.h" name="C:/Users/ZhouZishun/Documents/Workspace/OwheelNT/Bitbot_Encos/include/bus/Encos_bus.h">
+<area shape="rect" id="Node000001" title="Bitbot Encos bus header file" alt="" coords="26,5,198,80"/>
+<area shape="rect" id="Node000002" href="$_encos__kernel_8hpp.html" title="Bitbot Encos kernel header file" alt="" coords="5,251,219,325"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="80,95,67,129,60,165,67,202,76,226,88,249,83,251,71,228,61,203,55,165,61,127,76,93"/>
+<area shape="rect" id="Node000003" href="$_joint___auto_zero_8hpp.html" title="JointAutoZero类用于自动归零电机位置" alt="" coords="76,128,298,203"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="145,92,166,126,162,129,141,95"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="158,218,137,252,132,249,154,215"/>
+</map>

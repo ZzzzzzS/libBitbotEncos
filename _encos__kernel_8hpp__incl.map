@@ -1,0 +1,45 @@
+<map id="C:/Users/ZhouZishun/Documents/Workspace/OwheelNT/Bitbot_Encos/include/kernel/Encos_kernel.hpp" name="C:/Users/ZhouZishun/Documents/Workspace/OwheelNT/Bitbot_Encos/include/kernel/Encos_kernel.hpp">
+<area shape="rect" id="Node000001" title="Bitbot Encos kernel header file" alt="" coords="346,5,560,80"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="119,128,254,171"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="360,83,254,124,253,119,358,78"/>
+<area shape="rect" id="Node000003" href="$_encos__bus_8h.html" title="Bitbot Encos bus header file" alt="" coords="208,227,330,253"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="376,83,345,104,318,130,293,171,278,212,273,210,288,169,314,126,342,100,373,78"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="485,136,538,163"/>
+<area shape="poly" id="edge14_Node000001_Node000013" title=" " alt="" coords="476,79,500,121,495,124,471,82"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="563,136,634,163"/>
+<area shape="poly" id="edge15_Node000001_Node000014" title=" " alt="" coords="506,78,570,124,567,129,503,83"/>
+<area shape="rect" id="Node000015" href="$_joint___auto_zero_8hpp.html" title="JointAutoZero类用于自动归零电机位置" alt="" coords="327,136,462,163"/>
+<area shape="poly" id="edge16_Node000001_Node000015" title=" " alt="" coords="435,82,411,124,407,121,430,79"/>
+<area shape="rect" id="Node000019" title=" " alt="" coords="659,136,725,163"/>
+<area shape="poly" id="edge24_Node000001_Node000019" title=" " alt="" coords="538,78,647,126,651,127,648,132,645,130,536,83"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="95,309,240,352"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="256,256,204,301,201,297,253,252"/>
+<area shape="rect" id="Node000005" href="$_encos__device_8hpp.html" title="Bitbot Encos device header file" alt="" coords="264,317,434,344"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="283,252,330,304,326,307,279,256"/>
+<area shape="rect" id="Node000007" href="$_encos__bus__msg_8h.html" title="Bitbot Encos bus msg header file" alt="" coords="417,408,572,435"/>
+<area shape="poly" id="edge10_Node000003_Node000007" title=" " alt="" coords="314,251,391,277,425,292,448,307,464,327,477,349,491,392,486,394,472,351,460,330,445,311,423,297,389,282,313,257"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="79,408,136,435"/>
+<area shape="poly" id="edge12_Node000003_Node000010" title=" " alt="" coords="208,252,94,274,45,291,27,301,15,311,10,321,8,330,15,351,38,379,67,399,64,403,34,382,11,353,3,330,4,319,11,308,24,296,43,286,93,269,207,246"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="510,317,570,344"/>
+<area shape="poly" id="edge11_Node000003_Node000011" title=" " alt="" coords="315,251,491,307,497,309,495,314,490,312,313,256"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="25,317,71,344"/>
+<area shape="poly" id="edge13_Node000003_Node000012" title=" " alt="" coords="230,256,162,280,85,312,84,312,82,307,83,307,160,275,228,251"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="256,400,394,443"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="348,345,337,386,332,384,343,344"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="371,342,462,397,459,402,369,347"/>
+<area shape="poly" id="edge9_Node000005_Node000010" title=" " alt="" coords="315,347,152,407,150,402,314,342"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="407,491,486,517"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="489,437,464,479,459,476,485,434"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="510,491,575,517"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="504,434,530,476,525,479,500,437"/>
+<area shape="poly" id="edge17_Node000015_Node000003" title=" " alt="" coords="378,165,301,220,298,215,375,161"/>
+<area shape="rect" id="Node000016" href="$_encos__joint_8h.html" title="Bitbot Encos joint header file" alt="" coords="502,227,644,253"/>
+<area shape="poly" id="edge18_Node000015_Node000016" title=" " alt="" coords="421,161,535,217,533,222,419,166"/>
+<area shape="rect" id="Node000018" title=" " alt="" coords="354,219,477,261"/>
+<area shape="poly" id="edge23_Node000015_Node000018" title=" " alt="" coords="400,163,410,203,405,204,395,164"/>
+<area shape="poly" id="edge19_Node000016_Node000005" title=" " alt="" coords="542,256,396,314,394,309,540,251"/>
+<area shape="poly" id="edge21_Node000016_Node000007" title=" " alt="" coords="581,253,592,298,592,326,585,353,563,381,536,402,533,398,560,378,580,351,587,326,587,299,576,254"/>
+<area shape="poly" id="edge20_Node000016_Node000011" title=" " alt="" coords="571,255,552,304,547,302,566,253"/>
+<area shape="rect" id="Node000017" title=" " alt="" coords="646,317,695,344"/>
+<area shape="poly" id="edge22_Node000016_Node000017" title=" " alt="" coords="589,252,647,305,644,309,585,256"/>
+</map>

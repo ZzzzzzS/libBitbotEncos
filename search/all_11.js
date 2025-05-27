@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['virtualbusdevice_130',['VirtualBusDevice',['../classbitbot_1_1EncosDevice.html#ad942b3215fcafe0c0ec916e098cd001f',1,'bitbot::EncosDevice::VirtualBusDevice()'],['../classbitbot_1_1Encos__CANBusDevice.html#ab22eba0f4f20ac3dd3cf5ad875d4a117',1,'bitbot::Encos_CANBusDevice::VirtualBusDevice()'],['../classbitbot_1_1Encos__VirtualBusDevice.html#af2a6c0fe88b708ca3762576c1efc7dda',1,'bitbot::Encos_VirtualBusDevice::VirtualBusDevice()']]]
+  ['virtualbusdevice_0',['VirtualBusDevice',['../classbitbot_1_1_encos_device.html#a089655ded7c251c1d8b0499e6e747792',1,'bitbot::EncosDevice::VirtualBusDevice()'],['../classbitbot_1_1_encos___c_a_n_bus_device.html#ad6a6298de9dcfecbd017477ed94d0307',1,'bitbot::Encos_CANBusDevice::VirtualBusDevice()'],['../classbitbot_1_1_encos___virtual_bus_device.html#afdb92ce835960d821c8a228637b47f71',1,'bitbot::Encos_VirtualBusDevice::VirtualBusDevice()']]]
 ];

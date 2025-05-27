@@ -1,0 +1,34 @@
+<map id="C:/Users/ZhouZishun/Documents/Workspace/OwheelNT/Bitbot_Encos/include/kernel/Joint_AutoZero.hpp" name="C:/Users/ZhouZishun/Documents/Workspace/OwheelNT/Bitbot_Encos/include/kernel/Joint_AutoZero.hpp">
+<area shape="rect" id="Node000001" title="JointAutoZero类用于自动归零电机位置" alt="" coords="429,5,651,80"/>
+<area shape="rect" id="Node000002" href="$_encos__bus_8h.html" title="Bitbot Encos bus header file" alt="" coords="288,136,410,163"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="474,83,387,130,385,126,471,78"/>
+<area shape="rect" id="Node000012" href="$_encos__joint_8h.html" title="Bitbot Encos joint header file" alt="" coords="469,136,611,163"/>
+<area shape="poly" id="edge13_Node000001_Node000012" title=" " alt="" coords="543,80,543,121,537,121,537,80"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="636,128,759,171"/>
+<area shape="poly" id="edge18_Node000001_Node000014" title=" " alt="" coords="597,78,655,117,652,121,594,83"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="95,219,241,261"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="324,166,225,214,223,209,322,161"/>
+<area shape="rect" id="Node000004" href="$_encos__device_8hpp.html" title="Bitbot Encos device header file" alt="" coords="264,227,434,253"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="352,163,352,211,347,211,347,163"/>
+<area shape="rect" id="Node000006" href="$_encos__bus__msg_8h.html" title="Bitbot Encos bus msg header file" alt="" coords="417,317,572,344"/>
+<area shape="poly" id="edge9_Node000002_Node000006" title=" " alt="" coords="376,161,413,184,449,217,474,260,490,301,485,303,470,262,445,220,410,188,373,165"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="79,317,137,344"/>
+<area shape="poly" id="edge11_Node000002_Node000009" title=" " alt="" coords="288,157,213,164,131,176,59,194,33,206,15,220,10,230,8,239,16,260,38,288,67,308,64,313,34,292,11,263,3,239,4,228,11,217,30,202,57,189,130,171,212,158,287,151"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="510,227,570,253"/>
+<area shape="poly" id="edge10_Node000002_Node000010" title=" " alt="" coords="378,161,500,217,498,222,375,166"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="25,227,71,253"/>
+<area shape="poly" id="edge12_Node000002_Node000011" title=" " alt="" coords="288,164,191,187,85,221,83,222,81,217,83,216,190,182,287,159"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="257,309,394,352"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="348,255,337,295,332,294,343,253"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="371,252,462,307,460,311,369,256"/>
+<area shape="poly" id="edge8_Node000004_Node000009" title=" " alt="" coords="316,256,152,316,150,311,314,251"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="407,400,486,427"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="489,346,464,388,459,386,485,343"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="510,400,575,427"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="504,343,530,386,525,388,500,346"/>
+<area shape="poly" id="edge14_Node000012_Node000004" title=" " alt="" coords="514,166,391,222,389,217,512,161"/>
+<area shape="poly" id="edge16_Node000012_Node000006" title=" " alt="" coords="554,162,569,181,583,206,590,234,585,262,564,291,537,311,533,307,560,287,580,260,585,235,578,208,564,184,549,165"/>
+<area shape="poly" id="edge15_Node000012_Node000010" title=" " alt="" coords="543,163,543,211,537,211,537,163"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="646,227,695,253"/>
+<area shape="poly" id="edge17_Node000012_Node000013" title=" " alt="" coords="560,161,641,215,638,220,557,165"/>
+</map>

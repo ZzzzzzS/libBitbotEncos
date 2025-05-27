@@ -1,13 +1,13 @@
 var indexSectionsWithContent =
 {
-  0: "abcdefghijkmprstuvwy~",
+  0: "abcdefghijkmprstuvwyz~仅位免力接电硬自致软运速配驱",
   1: "ceijmy",
   2: "ejy",
   3: "deghijmprsuvwy~",
   4: "acdeikmprstwy",
   5: "ej",
   6: "afrsw",
-  7: "be"
+  7: "be驱"
 };
 
 var indexSectionNames =

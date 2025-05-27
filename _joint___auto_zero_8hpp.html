@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>BitbotEncos: C:/Users/ZhouZishun/Documents/Workspace/OwheelNT/Bitbot_Encos/include/kernel/Joint_AutoZero.hpp 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">BitbotEncos
+   </div>
+   <div id="projectbrief">Bitbot Encos is a bitbot instance for encos motor.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_joint___auto_zero_8hpp.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a>  </div>
+  <div class="headertitle"><div class="title">Joint_AutoZero.hpp 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>JointAutoZero类用于自动归零电机位置  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="_encos__bus_8h_source.html">bus/Encos_bus.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_encos__joint_8h_source.html">device/Encos_joint.h</a>&quot;</code><br />
+<code>#include &quot;bitbot_kernel/utils/logger.h&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Joint_AutoZero.hpp 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="_joint___auto_zero_8hpp__incl.png" border="0" usemap="#a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_owheel_n_t_2_bitbot___encos_2include_2kernel_2_joint___auto_zero_8hpp" alt=""/></div>
+<map name="a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_owheel_n_t_2_bitbot___encos_2include_2kernel_2_joint___auto_zero_8hpp" id="a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_owheel_n_t_2_bitbot___encos_2include_2kernel_2_joint___auto_zero_8hpp">
+<area shape="rect" title="JointAutoZero类用于自动归零电机位置" alt="" coords="429,5,651,80"/>
+<area shape="rect" href="_encos__bus_8h.html" title="Bitbot Encos bus header file" alt="" coords="288,136,410,163"/>
+<area shape="poly" title=" " alt="" coords="474,83,387,130,385,126,471,78"/>
+<area shape="rect" href="_encos__joint_8h.html" title="Bitbot Encos joint header file" alt="" coords="469,136,611,163"/>
+<area shape="poly" title=" " alt="" coords="543,80,543,121,537,121,537,80"/>
+<area shape="rect" title=" " alt="" coords="636,128,759,171"/>
+<area shape="poly" title=" " alt="" coords="597,78,655,117,652,121,594,83"/>
+<area shape="rect" title=" " alt="" coords="95,219,241,261"/>
+<area shape="poly" title=" " alt="" coords="324,166,225,214,223,209,322,161"/>
+<area shape="rect" href="_encos__device_8hpp.html" title="Bitbot Encos device header file" alt="" coords="264,227,434,253"/>
+<area shape="poly" title=" " alt="" coords="352,163,352,211,347,211,347,163"/>
+<area shape="rect" href="_encos__bus__msg_8h.html" title="Bitbot Encos bus msg header file" alt="" coords="417,317,572,344"/>
+<area shape="poly" title=" " alt="" coords="376,161,413,184,449,217,474,260,490,301,485,303,470,262,445,220,410,188,373,165"/>
+<area shape="rect" title=" " alt="" coords="79,317,137,344"/>
+<area shape="poly" title=" " alt="" coords="288,157,213,164,131,176,59,194,33,206,15,220,10,230,8,239,16,260,38,288,67,308,64,313,34,292,11,263,3,239,4,228,11,217,30,202,57,189,130,171,212,158,287,151"/>
+<area shape="rect" title=" " alt="" coords="510,227,570,253"/>
+<area shape="poly" title=" " alt="" coords="378,161,500,217,498,222,375,166"/>
+<area shape="rect" title=" " alt="" coords="25,227,71,253"/>
+<area shape="poly" title=" " alt="" coords="288,164,191,187,85,221,83,222,81,217,83,216,190,182,287,159"/>
+<area shape="rect" title=" " alt="" coords="257,309,394,352"/>
+<area shape="poly" title=" " alt="" coords="348,255,337,295,332,294,343,253"/>
+<area shape="poly" title=" " alt="" coords="371,252,462,307,460,311,369,256"/>
+<area shape="poly" title=" " alt="" coords="316,256,152,316,150,311,314,251"/>
+<area shape="rect" title=" " alt="" coords="407,400,486,427"/>
+<area shape="poly" title=" " alt="" coords="489,346,464,388,459,386,485,343"/>
+<area shape="rect" title=" " alt="" coords="510,400,575,427"/>
+<area shape="poly" title=" " alt="" coords="504,343,530,386,525,388,500,346"/>
+<area shape="poly" title=" " alt="" coords="514,166,391,222,389,217,512,161"/>
+<area shape="poly" title=" " alt="" coords="554,162,569,181,583,206,590,234,585,262,564,291,537,311,533,307,560,287,580,260,585,235,578,208,564,184,549,165"/>
+<area shape="poly" title=" " alt="" coords="543,163,543,211,537,211,537,163"/>
+<area shape="rect" title=" " alt="" coords="646,227,695,253"/>
+<area shape="poly" title=" " alt="" coords="560,161,641,215,638,220,557,165"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+此图展示该文件被哪些文件直接或间接地引用了:</div>
+<div class="dyncontent">
+<div class="center"><img src="_joint___auto_zero_8hpp__dep__incl.png" border="0" usemap="#a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_owheel_n_t_2_bitbot___encos_2include_2kernel_2_joint___auto_zero_8hppdep" alt=""/></div>
+<map name="a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_owheel_n_t_2_bitbot___encos_2include_2kernel_2_joint___auto_zero_8hppdep" id="a_c_1_2_users_2_zhou_zishun_2_documents_2_workspace_2_owheel_n_t_2_bitbot___encos_2include_2kernel_2_joint___auto_zero_8hppdep">
+<area shape="rect" title="JointAutoZero类用于自动归零电机位置" alt="" coords="5,5,228,80"/>
+<area shape="rect" href="_encos__kernel_8hpp.html" title="Bitbot Encos kernel header file" alt="" coords="10,128,223,203"/>
+<area shape="poly" title=" " alt="" coords="119,96,119,128,114,128,114,96"/>
+</map>
+</div>
+</div>
+<p><a href="_joint___auto_zero_8hpp_source.html">浏览该文件的源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbitbot_1_1_joint_auto_zero.html">bitbot::JointAutoZero</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>JointAutoZero类用于自动归零电机位置 </p>
+<dl class="section author"><dt>作者</dt><dd>zishun zhou (<a href="#" onclick="location.href='mai'+'lto:'+'zho'+'uz'+'ish'+'un'+'@ma'+'il'+'.zz'+'sh'+'ub.'+'cn'; return false;">zhouz<span class="obfuscator">.nosp@m.</span>ishu<span class="obfuscator">.nosp@m.</span>n@mai<span class="obfuscator">.nosp@m.</span>l.zz<span class="obfuscator">.nosp@m.</span>shub.<span class="obfuscator">.nosp@m.</span>cn</a>)</dd></dl>
+<p>JointAutoZero类用于自动归零电机位置，支持多个电机组的归零操作。用户可以通过配置文件指定每个电机的归零参数。</p>
+<dl class="section copyright"><dt>版权所有</dt><dd>Copyright (c) 2025 </dd></dl>
+</div></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_2ae24886e77657f82343b4b0154efdc1.html">kernel</a></li><li class="navelem"><a class="el" href="_joint___auto_zero_8hpp.html">Joint_AutoZero.hpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>
