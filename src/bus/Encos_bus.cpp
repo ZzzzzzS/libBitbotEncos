@@ -86,7 +86,7 @@ namespace bitbot
 
     void EncosBus::Init()
     {
-        this->CAN_Device_By_EtherCAT_ID.resize(ec_slavecount);
+        this->CAN_Device_By_EtherCAT_ID.resize(ec_slavecount * 2);
         this->CAN_BusReadBuffer.resize(ec_slavecount);
         this->CAN_BusWriteBuffer.resize(ec_slavecount);
         for (size_t i = 0; i < ec_slavecount; i++)
@@ -157,12 +157,21 @@ namespace bitbot
             std::sort(this->CAN_Device_By_EtherCAT_ID[i].begin(), this->CAN_Device_By_EtherCAT_ID[i].end(), [](Encos_CANBusDevice* a, Encos_CANBusDevice* b)
                 { return a->Id() < b->Id(); });
 
-            if (this->CAN_Device_By_EtherCAT_ID[i].size() > 6)
+            if (this->CAN_Device_By_EtherCAT_ID[i].size() > 3)
             {
                 this->logger_->error("CAN devices for each EtherCAT salves can not be greater than 6, check your configuration xml.");
                 this->ErrorFlag.store(true);
             }
         }
+
+        for (size_t i = 0;i < CAN_Device_By_EtherCAT_ID.size();i++)
+        {
+            for (size_t j = 0;j < CAN_Device_By_EtherCAT_ID[i].size();j++)
+            {
+                this->logger_->debug("EtherCAT Slave ID: {}, CAN ID: {}", i, CAN_Device_By_EtherCAT_ID[i][j]->Id());
+            }
+        }
+
     }
 
     void EncosBus::WriteBus()
@@ -172,15 +181,23 @@ namespace bitbot
             dev->WriteOnce();
         }
 
-        for (size_t i = 0; i < this->CAN_Device_By_EtherCAT_ID.size(); i++)
+        for (size_t i = 0; i < this->CAN_Device_By_EtherCAT_ID.size(); i += 2)
         {
             for (size_t j = 0; j < this->CAN_Device_By_EtherCAT_ID[i].size(); j++)
             {
-                this->CAN_Device_By_EtherCAT_ID[i][j]->WriteBus(this->CAN_BusWriteBuffer[i]->device[j]);
+                this->CAN_Device_By_EtherCAT_ID[i][j]->WriteBus(this->CAN_BusWriteBuffer[i / 2]->device[j]);
             }
-            this->CAN_BusWriteBuffer[i]->device_number = this->CAN_Device_By_EtherCAT_ID[i].size();
-            this->CAN_BusWriteBuffer[i]->can_ide = 0;
+
+            for (size_t j = 0; j < this->CAN_Device_By_EtherCAT_ID[i + 1].size(); j++)
+            {
+                this->CAN_Device_By_EtherCAT_ID[i + 1][j]->WriteBus(this->CAN_BusWriteBuffer[i / 2]->device[j + 3]);
+            }
+
+            //this->CAN_BusWriteBuffer[i/2]->device_number = this->CAN_Device_By_EtherCAT_ID[i].size() + this->CAN_Device_By_EtherCAT_ID[i + 1].size();
+            this->CAN_BusWriteBuffer[i / 2]->device_number = 0;
+            this->CAN_BusWriteBuffer[i / 2]->can_ide = 0;
         }
+
         ec_send_processdata();
     }
 
@@ -197,7 +214,7 @@ namespace bitbot
         {
             this->CAN_BusReadBuffer[i] = (EtherCAT_Msg*)(ec_slave[i + 1].inputs);
             // std::cout<<static_cast<int>(this->CAN_BusReadBuffer[i]->device_number)<<std::endl;
-            for (size_t j = 0; j < this->CAN_BusReadBuffer[i]->device_number; j++)
+            for (size_t j = 0; j < 6; j++)
             {
                 size_t canid = this->CAN_BusReadBuffer[i]->device[j].id;
                 // std::cout<<canid<<"rtr"<<static_cast<int>(this->CAN_BusReadBuffer[i]->device[j].rtr)<<std::endl;

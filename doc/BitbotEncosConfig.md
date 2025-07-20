@@ -52,7 +52,7 @@ Bitbot通过配置文件对系统参数及硬件设备进行配置与管理。�
 
 * **motor_direction：** 设置电机旋转方向，1为正方向，-1为负方向。
 
-* **slave_id：** 设置电机EtherCAT从机ID，该ID需要与电机实际连接的从站ID相符，从站ID从0开始递增。
+* **slave_id：** 设置电机EtherCAT从机ID，该ID需要与电机实际连接的从站ID相符，从站ID从0开始递增，每个从机有两个slave_id, 例如第一个连接的电路板有slave_id 0,1, can1通道为slave_id 0, can2为slave_id 1, 第二个连接的电路板有slave_id 2,3, can1通道为slave_id 2, can2为slave_id 3。以此类推。
 
 * **kp：** 设置电机运动模式下位置环比例系数。关于运动模式的详细说明请参阅[电机运动模式](./BitbotEncosMotorMotion.md)章节。
 
